@@ -10,11 +10,11 @@
     },
     "title": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
-      "fontSize": 14
+      "fontSize": 16
     },
     "header": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
-      "fontSize": 14
+      "fontSize": 16
     },
     "label": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",

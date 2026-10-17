@@ -140,6 +140,44 @@ table 'Measure Table'
 			   "Demand is evenly spread: review whether dead-hour staffing can be reduced.")
 		lineageTag: ea0251f5-a829-4588-9ea1-67353c2f10a9
 
+	measure 'Loyalty Revenue %' =
+			DIVIDE(SUM(fact_store_monthly_profitability[loyalty_member_spend_gbp]),
+			    SUM(fact_store_monthly_profitability[loyalty_member_spend_gbp]) +
+			    SUM(fact_store_monthly_profitability[non_member_spend_gbp]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 10a106b0-5324-444e-984b-2433ffa17ec3
+
+	measure 'Gross Margin %' = DIVIDE([Gross Profit], SUM(fact_daily_sales[total_revenue_gbp]))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6962c85c-1446-472d-ad8a-41647f552aa4
+
+	measure 'Store Risk Score' =
+			
+			VAR a = IF([Net Margin %] < [Network Margin %], 1, 0)
+			VAR b = IF([Staffing % Rev] > CALCULATE([Staffing % Rev], ALL(dim_store)), 1, 0)
+			VAR c = IF([Rent % Rev] > CALCULATE([Rent % Rev], ALL(dim_store)), 1, 0)
+			VAR d = IF([Loyalty Cost % Rev] > CALCULATE([Loyalty Cost % Rev], ALL(dim_store)), 1, 0)
+			RETURN a + b + c + d
+		formatString: 0
+		lineageTag: d85103e8-8e03-45b9-b0e9-66b93307ba5e
+
+	measure 'Priority Action' =
+			
+			SWITCH([Store Risk Score], 4, "Restructure", 3, "Renegotiate / re-staff", 2, "Monitor", "Maintain")
+		lineageTag: da255e1d-043d-425e-a68e-c325857d8ad0
+
+	measure 'Stores Needing Action' = COUNTROWS(FILTER(VALUES(dim_store[store_id]), [Store Risk Score] >= 3))
+		formatString: 0
+		lineageTag: f79fe25d-75c9-4527-9313-bb8919ee9023
+
+	measure 'P3 Insight' =
+			
+			[Stores Needing Action] & " stores score 3+ on structural risk (margin, staffing, rent, loyalty cost). " &
+			"Loyalty members contribute " & FORMAT([Loyalty Revenue %], "0%") & " of spend at a redemption cost of " &
+			FORMAT([Loyalty Cost % Rev], "0.0%") & " of revenue. " &
+			"Action: prioritise rent renegotiation and redemption-rule changes in the flagged stores."
+		lineageTag: 8b7ef86d-0d45-427d-a9ad-b19a8baa0c2d
+
 	partition 'Measure Table' = m
 		mode: import
 		source =

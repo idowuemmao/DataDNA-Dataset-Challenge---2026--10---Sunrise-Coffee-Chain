@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "Frontier5305258446036462.json",
+      "name": "Frontier10199127509808781.json",
       "reportVersionAtImport": {
         "visual": "2.14.0",
         "report": "3.4.0",
@@ -65,8 +65,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "Frontier5305258446036462.json",
-          "path": "Frontier5305258446036462.json",
+          "name": "Frontier10199127509808781.json",
+          "path": "Frontier10199127509808781.json",
           "type": "CustomTheme"
         }
       ]

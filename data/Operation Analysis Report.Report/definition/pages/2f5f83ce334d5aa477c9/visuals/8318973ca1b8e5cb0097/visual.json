@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "8318973ca1b8e5cb0097",
+  "position": {
+    "x": 237.0074812967581,
+    "y": 80.798004987531172,
+    "z": 0,
+    "height": 149.47630922693267,
+    "width": 1444.9376558603492,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Loyalty Revenue %"
+                }
+              },
+              "queryRef": "Measure Table.Loyalty Revenue %",
+              "nativeQueryRef": "Loyalty Revenue %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Loyalty Cost % Rev"
+                }
+              },
+              "queryRef": "Measure Table.Loyalty Cost % Rev",
+              "nativeQueryRef": "Loyalty Cost % Rev"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Rent % Rev"
+                }
+              },
+              "queryRef": "Measure Table.Rent % Rev",
+              "nativeQueryRef": "Rent % Rev"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Gross Margin %"
+                }
+              },
+              "queryRef": "Measure Table.Gross Margin %",
+              "nativeQueryRef": "Gross Margin %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Stores Needing Action"
+                }
+              },
+              "queryRef": "Measure Table.Stores Needing Action",
+              "nativeQueryRef": "Stores Needing Action"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Priority Action"
+                }
+              },
+              "queryRef": "Measure Table.Priority Action",
+              "nativeQueryRef": "Priority Action"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Measure Table"
+                  }
+                },
+                "Property": "Loyalty Revenue %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
