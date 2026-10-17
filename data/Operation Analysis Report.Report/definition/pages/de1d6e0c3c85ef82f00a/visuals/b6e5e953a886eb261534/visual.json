@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "b6e5e953a886eb261534",
+  "position": {
+    "x": 1312.9675810473816,
+    "y": 272.01995012468831,
+    "z": 2,
+    "height": 420.14962593516208,
+    "width": 595.21197007481294,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "waterfallChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Waterfall Lines"
+                    }
+                  },
+                  "Property": "Line"
+                }
+              },
+              "queryRef": "Waterfall Lines.Line",
+              "nativeQueryRef": "Line",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Waterfall Value"
+                }
+              },
+              "queryRef": "Measure Table.Waterfall Value",
+              "nativeQueryRef": "Waterfall Value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Waterfall Lines"
+                  }
+                },
+                "Property": "Line"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

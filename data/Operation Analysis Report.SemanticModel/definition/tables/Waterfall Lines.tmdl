@@ -1,0 +1,40 @@
+table 'Waterfall Lines'
+	lineageTag: 60f03e64-186f-4aa1-8401-ae6c3994308f
+
+	column Line
+		lineageTag: a20953b1-c681-4a4e-8e30-ffa192790a50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Line]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: eaf37997-c50d-4ed5-8c1c-d958fe51741a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Waterfall Lines' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Line", STRING,
+				    "Order", INTEGER,
+				    {
+				        {"Revenue", 1},
+				        {"COGS", 2},
+				        {"Rent", 3},
+				        {"Staffing", 4},
+				        {"Loyalty Cost", 5},
+				        {"Other / Unallocated", 6}
+				    }
+				)
+
+	annotation PBI_Id = 99fafa6291fd4086815dc9d14d593232
+

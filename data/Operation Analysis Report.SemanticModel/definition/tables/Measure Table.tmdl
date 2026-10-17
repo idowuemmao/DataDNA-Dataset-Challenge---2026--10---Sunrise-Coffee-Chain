@@ -82,6 +82,64 @@ table 'Measure Table'
 			". Action: review rent and staffing in loss-making stores before investing in volume."
 		lineageTag: 0af8be98-8c68-481d-98fe-707b6609ffa6
 
+	measure 'Waterfall Value' =
+			
+			VAR rev   = [Revenue]
+			VAR cogs  = SUM(fact_store_monthly_profitability[total_monthly_cogs_gbp])
+			VAR rent  = SUM(fact_store_monthly_profitability[monthly_rent_gbp])
+			VAR staff = SUM(fact_store_monthly_profitability[monthly_staffing_cost_gbp])
+			VAR loy   = SUM(fact_store_monthly_profitability[loyalty_redemption_cost_gbp])
+			VAR other = [Net Profit] - (rev - cogs - rent - staff - loy)
+			RETURN
+			SWITCH(
+			    SELECTEDVALUE('Waterfall Lines'[Line]),
+			    "Revenue", rev,
+			    "COGS", -cogs,
+			    "Rent", -rent,
+			    "Staffing", -staff,
+			    "Loyalty Cost", -loy,
+			    "Other / Unallocated", IF(ABS(other) < 1, BLANK(), other)
+			)
+		lineageTag: f26ff776-40ca-42d3-bbfc-34a3bb010f82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue per Staff Hour' = DIVIDE(SUM(fact_daily_sales[total_revenue_gbp]), SUM(fact_daily_sales[total_staff_hours]))
+		lineageTag: 0930b823-9dfd-4932-8b8e-2b36147f626d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Transaction per Staff Hour' = DIVIDE(SUM(fact_daily_sales[total_transactions]), SUM(fact_daily_sales[total_staff_hours]))
+		lineageTag: a3b0066d-6ae0-4ae6-904f-d3ea59fce701
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Peak-to-Dead Ratio' =
+			DIVIDE(SUM(fact_store_monthly_profitability[peak_hour_transactions]),
+			                            SUM(fact_store_monthly_profitability[dead_hour_transactions]))
+		lineageTag: 0e6cb438-faa9-4599-abb8-ef74072899d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Dwell Time' = AVERAGE(fact_daily_sales[avg_dwell_time_minutes])
+		lineageTag: 4150354f-170b-4db7-af66-29b4e000c0cb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue per Footfall' = DIVIDE(SUM(fact_daily_sales[total_revenue_gbp]), SUM(fact_daily_sales[footfall]))
+		lineageTag: dcbd0161-0f6b-4c22-bd3e-f96b32a22aa3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P2 Insight' =
+			
+			"Revenue per staff hour is " & FORMAT([Revenue per Staff Hour], "£0.00") &
+			" with staffing at " & FORMAT([Staffing % Rev], "0.0%") & " of revenue. " &
+			"Peak-to-dead ratio is " & FORMAT([Peak-to-Dead Ratio], "0.0") & "x. " &
+			IF([Peak-to-Dead Ratio] > 3, "Demand is highly concentrated: shift labour toward peak windows.",
+			   "Demand is evenly spread: review whether dead-hour staffing can be reduced.")
+		lineageTag: ea0251f5-a829-4588-9ea1-67353c2f10a9
+
 	partition 'Measure Table' = m
 		mode: import
 		source =

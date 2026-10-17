@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 119.21731470725126,
-        "y": 42.177433187551742
+        "x": 0,
+        "y": 0
       },
       "nodes": [
         {
@@ -82,6 +82,18 @@
           "nodeLineageTag": "4fda4096-cb75-4d9d-a105-10347004ba2b",
           "size": {
             "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1351.1329738242266,
+            "y": 320.57268880062503
+          },
+          "nodeIndex": "Waterfall Lines",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

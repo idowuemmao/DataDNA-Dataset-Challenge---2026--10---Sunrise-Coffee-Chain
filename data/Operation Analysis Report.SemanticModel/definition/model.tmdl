@@ -23,6 +23,12 @@ ref table dim_store
 ref table dim_date
 ref table LocalDateTable_6ca1c340-9f13-4a54-80cb-b268594650eb
 ref table 'Measure Table'
+ref table LocalDateTable_ba33a5e1-221d-4838-b2b1-a928cf36223d
+ref table LocalDateTable_ef31453b-d7f9-473a-acd8-7644563beb0c
+ref table LocalDateTable_978ab0e7-4dd5-4a3f-8b16-4e194c04459c
+ref table LocalDateTable_b4b4ca17-aa7e-4d49-9f0f-f323fc153150
+ref table LocalDateTable_329e476e-240f-4ac1-83c5-fc82ae49a939
+ref table 'Waterfall Lines'
 
 ref cultureInfo en-US
 

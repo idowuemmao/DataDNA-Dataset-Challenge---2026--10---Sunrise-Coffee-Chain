@@ -49,15 +49,20 @@ table dim_date
 		lineageTag: 4e04b0cb-8f0b-4076-b32a-fb1f4ab65942
 		summarizeBy: none
 		sourceColumn: month_name
+		sortByColumn: month_number
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
 	column quarter
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 2346234d-5695-49e5-991e-bf5a039b9fa5
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: quarter
+		sortByColumn: 'Quarter No'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -75,6 +80,9 @@ table dim_date
 		lineageTag: f0195100-32f6-4b2b-b663-7c5ec9c99e67
 		summarizeBy: none
 		sourceColumn: day_of_week
+		sortByColumn: 'Day of week number'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -104,15 +112,164 @@ table dim_date
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Day of week number'
+		dataType: double
+		lineageTag: 12f83a99-fd65-40e6-8b98-c925d3380b48
+		summarizeBy: sum
+		sourceColumn: Day of week number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start of year'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 15bef906-7c4d-421b-b871-464f46fc28a1
+		summarizeBy: none
+		sourceColumn: Start of year
+
+		variation Variation
+			isDefault
+			relationship: d7d8d815-50ac-431f-8130-853a7ddec781
+			defaultHierarchy: LocalDateTable_ba33a5e1-221d-4838-b2b1-a928cf36223d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start of month'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 55300965-653f-4d82-b25a-6c99ffde9dcc
+		summarizeBy: none
+		sourceColumn: Start of month
+
+		variation Variation
+			isDefault
+			relationship: cc84a1ec-3f1a-41c9-ad5a-d96316d64486
+			defaultHierarchy: LocalDateTable_ef31453b-d7f9-473a-acd8-7644563beb0c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start of quarter'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 18e9bc37-7480-4deb-9c5f-bb18e28bedba
+		summarizeBy: none
+		sourceColumn: Start of quarter
+
+		variation Variation
+			isDefault
+			relationship: 9e6ffde1-d8ef-4738-a7ab-a06802f63515
+			defaultHierarchy: LocalDateTable_978ab0e7-4dd5-4a3f-8b16-4e194c04459c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start of week'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bead7366-67e4-449d-bd6a-a70519d52f2e
+		summarizeBy: none
+		sourceColumn: Start of week
+
+		variation Variation
+			isDefault
+			relationship: 5173fe7f-0419-4a57-a8c2-8b86806db944
+			defaultHierarchy: LocalDateTable_b4b4ca17-aa7e-4d49-9f0f-f323fc153150.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Start of day'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aea5f6dc-8204-4d9f-a45e-ef1497fb453d
+		summarizeBy: none
+		sourceColumn: Start of day
+
+		variation Variation
+			isDefault
+			relationship: 8c488700-3758-4475-a4c2-2d1c35334de9
+			defaultHierarchy: LocalDateTable_329e476e-240f-4ac1-83c5-fc82ae49a939.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Quarter No'
+		dataType: double
+		lineageTag: 00863f9c-8c9e-403c-99eb-7beeb601a046
+		summarizeBy: sum
+		sourceColumn: Quarter No
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: f14111fe-8e24-4086-bafe-bae3509ac7b7
+
+		level 'Start of year'
+			lineageTag: c1b05175-8b43-4001-9994-341d2fdc86c4
+			column: 'Start of year'
+
+		level 'Start of quarter'
+			lineageTag: b3ca62ec-1688-4e16-b41e-f7c4a07d62a6
+			column: 'Start of quarter'
+
+		level 'Start of month'
+			lineageTag: b390faa4-74d6-446c-b1b0-9e92c45f6dc9
+			column: 'Start of month'
+
+		level 'Start of week'
+			lineageTag: 8be4ae37-da96-4007-bd92-04e78517771f
+			column: 'Start of week'
+
+		level 'Start of day'
+			lineageTag: e000da4b-5c4e-4db2-8d92-c69d79611295
+			column: 'Start of day'
+
+	hierarchy 'year Hierarchy'
+		lineageTag: 95106e9f-efa8-482e-bf8c-af0c42348226
+
+		level year
+			lineageTag: bac94094-9c67-4b0a-820c-cfd0c4f0a5ec
+			column: year
+
+		level quarter
+			lineageTag: 223c7e4b-28ef-47e4-83b1-75f5838231e3
+			column: quarter
+
+		level month_name
+			lineageTag: b5166868-4e80-4e53-b73b-b82e98f0a6cf
+			column: month_name
+
 	partition dim_date = m
 		mode: import
 		source =
 				let
 				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\dim_date.csv"), [Delimiter = ",", Columns = 11, QuoteStyle = QuoteStyle.None]),
 				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"date_id", Int64.Type}, {"full_date", type date}, {"year", Int64.Type}, {"month_number", Int64.Type}, {"month_name", type text}, {"quarter", Int64.Type}, {"week_number", Int64.Type}, {"day_of_week", type text}, {"is_weekend", type logical}, {"is_uk_bank_holiday", type logical}, {"uk_trading_calendar", type text}})
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"date_id", Int64.Type}, {"full_date", type date}, {"year", Int64.Type}, {"month_number", Int64.Type}, {"month_name", type text}, {"quarter", Int64.Type}, {"week_number", Int64.Type}, {"day_of_week", type text}, {"is_weekend", type logical}, {"is_uk_bank_holiday", type logical}, {"uk_trading_calendar", type text}}),
+				  #"Extracted first characters" = Table.TransformColumns(#"Changed column type", {{"month_name", each Text.Start(_, 3), type text}, {"day_of_week", each Text.Start(_, 3), type text}}),
+				  #"Inserted day of week" = Table.AddColumn(#"Extracted first characters", "Day of week", each Date.DayOfWeek([full_date]), type nullable number),
+				  #"Renamed columns" = Table.RenameColumns(#"Inserted day of week", {{"Day of week", "Day of week number"}}),
+				  #"Inserted start of year" = Table.AddColumn(#"Renamed columns", "Start of year", each Date.StartOfYear([full_date]), type nullable date),
+				  #"Inserted start of month" = Table.AddColumn(#"Inserted start of year", "Start of month", each Date.StartOfMonth([full_date]), type nullable date),
+				  #"Inserted start of quarter" = Table.AddColumn(#"Inserted start of month", "Start of quarter", each Date.StartOfQuarter([full_date]), type nullable date),
+				  #"Inserted start of week" = Table.AddColumn(#"Inserted start of quarter", "Start of week", each Date.StartOfWeek([full_date]), type nullable date),
+				  #"Inserted start of day" = Table.AddColumn(#"Inserted start of week", "Start of day", each Date.StartOfDay([full_date]), type nullable date),
+				  #"Added prefix" = Table.TransformColumns(#"Inserted start of day", {{"quarter", each "Qtr" & Text.From(_), type text}}),
+				  #"Inserted quarter" = Table.AddColumn(#"Added prefix", "Quarter (2)", each Date.QuarterOfYear([full_date]), type nullable number),
+				  #"Renamed columns 1" = Table.RenameColumns(#"Inserted quarter", {{"Quarter (2)", "Quarter No"}})
 				in
-				  #"Changed column type"
+				  #"Renamed columns 1"
 
 	annotation PBI_ResultType = Table
 

@@ -33,3 +33,28 @@ relationship AutoDetected_4b57f7e0-74f4-452f-99c0-ed65df78c0e7
 	fromColumn: fact_daily_sales.product_id
 	toColumn: dim_product.product_id
 
+relationship d7d8d815-50ac-431f-8130-853a7ddec781
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.'Start of year'
+	toColumn: LocalDateTable_ba33a5e1-221d-4838-b2b1-a928cf36223d.Date
+
+relationship cc84a1ec-3f1a-41c9-ad5a-d96316d64486
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.'Start of month'
+	toColumn: LocalDateTable_ef31453b-d7f9-473a-acd8-7644563beb0c.Date
+
+relationship 9e6ffde1-d8ef-4738-a7ab-a06802f63515
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.'Start of quarter'
+	toColumn: LocalDateTable_978ab0e7-4dd5-4a3f-8b16-4e194c04459c.Date
+
+relationship 5173fe7f-0419-4a57-a8c2-8b86806db944
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.'Start of week'
+	toColumn: LocalDateTable_b4b4ca17-aa7e-4d49-9f0f-f323fc153150.Date
+
+relationship 8c488700-3758-4475-a4c2-2d1c35334de9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.'Start of day'
+	toColumn: LocalDateTable_329e476e-240f-4ac1-83c5-fc82ae49a939.Date
+
