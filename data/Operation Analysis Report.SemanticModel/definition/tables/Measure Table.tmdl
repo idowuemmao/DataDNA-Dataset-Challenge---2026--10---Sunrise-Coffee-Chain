@@ -1,21 +1,95 @@
 table 'Measure Table'
 	lineageTag: 4fda4096-cb75-4d9d-a105-10347004ba2b
 
-	column Column1
-		dataType: string
-		lineageTag: 73a4bbf7-8956-4ab6-8855-d0bdba0bc635
-		summarizeBy: none
-		sourceColumn: Column1
+	measure Revenue = SUM(fact_store_monthly_profitability[total_monthly_revenue_gbp])
+		formatString: #,0.00
+		lineageTag: d95b56c7-4a04-40f2-8ff9-0f741e1509b5
 
-		annotation SummarizationSetBy = Automatic
+	measure 'Net Profit' = ```
+			SUM(fact_store_monthly_profitability[net_profit_gbp])
+			
+			```
+		formatString: #,0.00
+		lineageTag: db497854-d29e-45e6-ab92-316fb9d3f70f
+
+	measure 'Net Margin %' = ```
+			DIVIDE([Net Profit], [Revenue])
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eb23966a-689c-45f4-9f59-80fe7fbbe686
+
+	measure 'Gross Profit' = SUM(fact_daily_sales[daily_gross_profit_gbp])
+		formatString: #,0.00
+		lineageTag: 93602d88-2d13-4fa3-89ef-ea4c565fd262
+
+	measure 'Revenue PM' = CALCULATE([Revenue], DATEADD(dim_date[full_date], -1, MONTH))
+		lineageTag: c4c0a436-b220-4b6a-980d-0ef4553a8a90
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue MoM %' = DIVIDE([Revenue] - [Revenue PM], [Revenue PM])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9b73767c-b415-4158-ae14-70d4c37fa146
+
+	measure 'Network Margin %' = CALCULATE([Net Margin %], ALL(dim_store))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c4644c82-3aa6-4199-a332-57b350bb56be
+
+	measure 'Margin Gap (pts)' = [Net Margin %] - [Network Margin %]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3f0bcc81-4547-4120-b836-adecc5f62449
+
+	measure 'Loss-Making Stores' = COUNTROWS(FILTER(VALUES(dim_store[store_id]), [Net Profit] < 0))
+		formatString: 0
+		lineageTag: 3bd2031b-d020-44d0-bd41-9e50ffd28a36
+
+	measure 'Loss Store Revenue Share' =
+			
+			DIVIDE(CALCULATE([Revenue], FILTER(VALUES(dim_store[store_id]), [Net Profit] < 0)), [Revenue])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9d166136-0394-4764-bfd2-9303ae2ab650
+
+	measure 'Staffing % Rev' = DIVIDE(SUM(fact_store_monthly_profitability[monthly_staffing_cost_gbp]), [Revenue])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bc1f708c-54a2-4d72-84ba-28beea7d154b
+
+	measure 'Rent % Rev' = DIVIDE(SUM(fact_store_monthly_profitability[monthly_rent_gbp]), [Revenue])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 59db8c89-f368-4229-9cd3-4f9045f8c462
+
+	measure 'Loyalty Cost % Rev' = DIVIDE(SUM(fact_store_monthly_profitability[loyalty_redemption_cost_gbp]), [Revenue])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 429ff989-f673-4f59-8f2e-123aca895500
+
+	measure COGS = SUM(fact_store_monthly_profitability[total_monthly_cogs_gbp])
+		formatString: #,0.00
+		lineageTag: e0ce7dec-5242-4242-8427-d38090dcbc9b
+
+	measure 'Avg Footfall' = AVERAGE(fact_store_monthly_profitability[avg_daily_footfall])
+		formatString: #,0.00
+		lineageTag: 053d223b-3b8a-4b53-b6ea-cb832e16fd1a
+
+	measure 'P1 Insight' =
+			
+			VAR worst = TOPN(1, VALUES(dim_store[store_name]), [Net Margin %], ASC)
+			VAR worstName = MAXX(worst, dim_store[store_name])
+			RETURN
+			[Loss-Making Stores] & " stores are loss-making and generate " &
+			FORMAT([Loss Store Revenue Share], "0.0%") & " of revenue. Lowest margin: " &
+			worstName & " at " & FORMAT(CALCULATE([Net Margin %], dim_store[store_name] = worstName), "0.0%") &
+			". Network margin is " & FORMAT([Network Margin %], "0.0%") &
+			". Action: review rent and staffing in loss-making stores before investing in volume."
+		lineageTag: 0af8be98-8c68-481d-98fe-707b6609ffa6
 
 	partition 'Measure Table' = m
 		mode: import
 		source =
 				let
-				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
 				in
-				  Source
+				  #"Removed Columns"
 
 	annotation PBI_ResultType = Table
 
