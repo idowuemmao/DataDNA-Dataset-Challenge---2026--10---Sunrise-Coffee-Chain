@@ -1,0 +1,103 @@
+table dim_product
+	lineageTag: cc735dc5-6b1b-4e53-b714-f2bd7f5f8769
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f423de0-b548-4f29-b7e8-2c3544377b2b
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: b0ecb51a-f5c4-4820-9285-e871b9247a6b
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category
+		dataType: string
+		lineageTag: e73136c6-949c-4ad5-b173-7d6233889381
+		summarizeBy: none
+		sourceColumn: product_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price_gbp
+		dataType: double
+		lineageTag: 7af26df4-3aac-40e8-8c38-6a81044ebbbb
+		summarizeBy: sum
+		sourceColumn: unit_price_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_cost_gbp
+		dataType: double
+		lineageTag: fbd7c733-dd5c-43b2-885e-a37cf6771bfb
+		summarizeBy: sum
+		sourceColumn: unit_cost_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_margin_pct
+		dataType: double
+		lineageTag: b21b3649-7a3e-42ef-ac3e-dd4bf3765b1b
+		summarizeBy: sum
+		sourceColumn: gross_margin_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_loyalty_eligible
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a4a398d0-f449-42ec-8aff-261df1fb51e0
+		summarizeBy: none
+		sourceColumn: is_loyalty_eligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_status
+		dataType: string
+		lineageTag: 3dccb033-fca5-4ef2-9063-74ea4624087a
+		summarizeBy: none
+		sourceColumn: product_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column launch_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d3a3ce79-c4c8-4738-a650-42bac3a2f978
+		summarizeBy: none
+		sourceColumn: launch_date
+
+		variation Variation
+			isDefault
+			relationship: 5c47badd-909d-4616-9619-0869fbd0e601
+			defaultHierarchy: LocalDateTable_e6e70676-0a2d-44fd-b533-932b9981ffbc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\dim_product.csv"), [Delimiter = ",", Columns = 9, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"product_id", Int64.Type}, {"product_name", type text}, {"product_category", type text}, {"unit_price_gbp", type number}, {"unit_cost_gbp", type number}, {"gross_margin_pct", type number}, {"is_loyalty_eligible", type logical}, {"product_status", type text}, {"launch_date", type date}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

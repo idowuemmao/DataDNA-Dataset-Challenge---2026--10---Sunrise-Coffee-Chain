@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["fact_store_monthly_profitability","fact_daily_sales","dim_product","dim_store","dim_date","Measure Table"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table fact_store_monthly_profitability
+ref table DateTableTemplate_b2be1ef5-2e4f-4151-939c-f092cefb7ce0
+ref table LocalDateTable_93bff200-2854-45ff-b8b1-14103e630092
+ref table fact_daily_sales
+ref table dim_product
+ref table LocalDateTable_e6e70676-0a2d-44fd-b533-932b9981ffbc
+ref table dim_store
+ref table dim_date
+ref table LocalDateTable_6ca1c340-9f13-4a54-80cb-b268594650eb
+ref table 'Measure Table'
+
+ref cultureInfo en-US
+

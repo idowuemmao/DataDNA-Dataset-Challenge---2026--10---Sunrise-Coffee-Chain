@@ -1,0 +1,118 @@
+table dim_date
+	lineageTag: 8d89bffa-b188-4440-aea1-cc0f467dabde
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d4969a5f-f21a-4df5-aa1f-74ec320a04f3
+		summarizeBy: none
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bd959092-a47f-4fc7-997e-c7a05f692968
+		summarizeBy: none
+		sourceColumn: full_date
+
+		variation Variation
+			isDefault
+			relationship: 88ab91d0-eac3-4ca9-b6ae-e09b7bc43b13
+			defaultHierarchy: LocalDateTable_6ca1c340-9f13-4a54-80cb-b268594650eb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d18cfaf-0426-468f-af76-2f9753f17bf2
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 88e256ce-50c8-45cd-b4e6-d8cd035394cf
+		summarizeBy: sum
+		sourceColumn: month_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: 4e04b0cb-8f0b-4076-b32a-fb1f4ab65942
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 2346234d-5695-49e5-991e-bf5a039b9fa5
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_number
+		dataType: int64
+		formatString: 0
+		lineageTag: d3340b67-cb8e-4f56-91d0-222902cf0324
+		summarizeBy: sum
+		sourceColumn: week_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: f0195100-32f6-4b2b-b663-7c5ec9c99e67
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 121879c3-3661-4ddb-866e-015b5dedc120
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_uk_bank_holiday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 79929481-898b-4c02-ac4b-32d7f2a7cc59
+		summarizeBy: none
+		sourceColumn: is_uk_bank_holiday
+
+		annotation SummarizationSetBy = Automatic
+
+	column uk_trading_calendar
+		dataType: string
+		lineageTag: b4d6cf38-a07a-4e14-bc2b-2ccab2b91e12
+		summarizeBy: none
+		sourceColumn: uk_trading_calendar
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\dim_date.csv"), [Delimiter = ",", Columns = 11, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"date_id", Int64.Type}, {"full_date", type date}, {"year", Int64.Type}, {"month_number", Int64.Type}, {"month_name", type text}, {"quarter", Int64.Type}, {"week_number", Int64.Type}, {"day_of_week", type text}, {"is_weekend", type logical}, {"is_uk_bank_holiday", type logical}, {"uk_trading_calendar", type text}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

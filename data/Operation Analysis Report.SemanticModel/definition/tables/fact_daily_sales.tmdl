@@ -1,0 +1,195 @@
+table fact_daily_sales
+	lineageTag: 1e7a2380-b4b9-4a2d-bc76-d51b31a59ff1
+
+	column daily_sale_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 62738d29-c2d7-4ea1-8d66-b1a5335d67ed
+		summarizeBy: sum
+		sourceColumn: daily_sale_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0462f5c0-7d0a-4974-9c74-bcad329e4ddb
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c5c9d25-cb20-4157-bfd1-2704cb90cff4
+		summarizeBy: none
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fa749bfa-24b8-4483-9471-7c974822da7e
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_revenue_gbp
+		dataType: double
+		lineageTag: bdb8855e-df54-4d16-8931-b20686441ee9
+		summarizeBy: sum
+		sourceColumn: total_revenue_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_transactions
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b72282e-eeeb-4a2b-838c-b0f0b5acf40b
+		summarizeBy: sum
+		sourceColumn: total_transactions
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_transaction_value_gbp
+		dataType: double
+		lineageTag: 9f32d906-9a42-49bd-bc7e-97e139ee40aa
+		summarizeBy: sum
+		sourceColumn: avg_transaction_value_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column loyalty_transactions
+		dataType: int64
+		formatString: 0
+		lineageTag: 960c4fb7-d18a-4282-8fbd-f14b5eb63b85
+		summarizeBy: sum
+		sourceColumn: loyalty_transactions
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_redemption_cost_gbp
+		dataType: double
+		lineageTag: 0f6101a2-25e1-4215-a9ed-47404469bdcf
+		summarizeBy: sum
+		sourceColumn: loyalty_redemption_cost_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column footfall
+		dataType: int64
+		formatString: 0
+		lineageTag: f8d87ae9-4ad9-4ce7-a268-bbb518dab37f
+		summarizeBy: sum
+		sourceColumn: footfall
+
+		annotation SummarizationSetBy = Automatic
+
+	column espresso_revenue_gbp
+		dataType: double
+		lineageTag: ad053db6-1df6-4211-ab8e-01138a43ebc9
+		summarizeBy: sum
+		sourceColumn: espresso_revenue_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column filter_revenue_gbp
+		dataType: double
+		lineageTag: d7b89437-6c3a-4847-9aa3-4a296881ae6b
+		summarizeBy: sum
+		sourceColumn: filter_revenue_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column food_revenue_gbp
+		dataType: double
+		lineageTag: 6663a463-9746-4dfa-b44f-e9f01dbcf9c2
+		summarizeBy: sum
+		sourceColumn: food_revenue_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column retail_beans_revenue_gbp
+		dataType: double
+		lineageTag: 533e30be-4872-4522-9690-173bc7dcb329
+		summarizeBy: sum
+		sourceColumn: retail_beans_revenue_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column daily_gross_profit_gbp
+		dataType: double
+		lineageTag: dcc2489f-2aa8-40fd-9a48-9e3120d13e1a
+		summarizeBy: sum
+		sourceColumn: daily_gross_profit_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column staff_count
+		dataType: int64
+		formatString: 0
+		lineageTag: a8496002-6e8a-4a80-8f0f-f60c9abff196
+		summarizeBy: sum
+		sourceColumn: staff_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_staff_hours
+		dataType: double
+		lineageTag: 68006fc6-9ffa-49e3-a5fd-fc1f80a259a8
+		summarizeBy: sum
+		sourceColumn: total_staff_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shift_pattern
+		dataType: string
+		lineageTag: 0fe28ee6-ef60-4b97-8dd0-ef01feab4fd5
+		summarizeBy: none
+		sourceColumn: shift_pattern
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_dwell_time_minutes
+		dataType: double
+		lineageTag: 98597493-cae3-4191-99df-b29b47e25fb2
+		summarizeBy: sum
+		sourceColumn: avg_dwell_time_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_daily_sales = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\fact_daily_sales.csv"), [Delimiter = ",", Columns = 19, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"daily_sale_id", Int64.Type}, {"store_id", Int64.Type}, {"date_id", Int64.Type}, {"product_id", Int64.Type}, {"total_revenue_gbp", type number}, {"total_transactions", Int64.Type}, {"avg_transaction_value_gbp", type number}, {"loyalty_transactions", Int64.Type}, {"loyalty_redemption_cost_gbp", type number}, {"footfall", Int64.Type}, {"espresso_revenue_gbp", type number}, {"filter_revenue_gbp", type number}, {"food_revenue_gbp", type number}, {"retail_beans_revenue_gbp", type number}, {"daily_gross_profit_gbp", type number}, {"staff_count", Int64.Type}, {"total_staff_hours", type number}, {"shift_pattern", type text}, {"avg_dwell_time_minutes", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

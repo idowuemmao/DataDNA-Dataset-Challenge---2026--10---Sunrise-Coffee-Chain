@@ -1,0 +1,137 @@
+table dim_store
+	lineageTag: c771f597-4581-4f06-acc8-2b247052c4b9
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0dfc4175-21ad-4537-a3e7-693c1eca144b
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_name
+		dataType: string
+		lineageTag: 8d31f37b-de74-40f9-8ddd-ff60b26c2ec3
+		summarizeBy: none
+		sourceColumn: store_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_format
+		dataType: string
+		lineageTag: ff5ef368-0e2d-4dc7-8e5b-59c332b62bc5
+		summarizeBy: none
+		sourceColumn: store_format
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_type
+		dataType: string
+		lineageTag: d46525ee-c27a-4512-8d63-d9e60454ae56
+		summarizeBy: none
+		sourceColumn: location_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 5af7bfd4-d023-4738-80f3-58ee7fddf75b
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: f22c3e59-b07f-4fbe-8cac-9047c4972f40
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthly_rent_gbp
+		dataType: double
+		lineageTag: 80e4c16b-75b0-4105-b0f7-155a011cfba9
+		summarizeBy: sum
+		sourceColumn: monthly_rent_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column staff_headcount
+		dataType: int64
+		formatString: 0
+		lineageTag: 56d96144-ce17-4350-b3ad-4bebc16be048
+		summarizeBy: sum
+		sourceColumn: staff_headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthly_staffing_cost_gbp
+		dataType: double
+		lineageTag: 6f2a146a-cc1a-4e1e-8e7b-c91ba9cb4437
+		summarizeBy: sum
+		sourceColumn: monthly_staffing_cost_gbp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column loyalty_adoption_rate
+		dataType: double
+		lineageTag: 8ee5fb7e-f599-413f-b13a-3afaa83f7820
+		summarizeBy: sum
+		sourceColumn: loyalty_adoption_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column seating_capacity
+		dataType: int64
+		formatString: 0
+		lineageTag: d81736db-46ef-4827-ba5a-6d81f4702114
+		summarizeBy: sum
+		sourceColumn: seating_capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column opening_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bc78e01-4560-4e41-a8cc-e6999e69d1d7
+		summarizeBy: sum
+		sourceColumn: opening_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_status
+		dataType: string
+		lineageTag: 0de10b98-dc7b-490d-a3f7-26f6c027f78b
+		summarizeBy: none
+		sourceColumn: store_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rent per Seat' = DIVIDE(dim_store[monthly_rent_gbp], dim_store[seating_capacity])
+		lineageTag: 7a9e1764-b67d-4c42-8d0c-709df0a23886
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_store = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\dim_store.csv"), [Delimiter = ",", Columns = 13, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"store_id", Int64.Type}, {"store_name", type text}, {"store_format", type text}, {"location_type", type text}, {"city", type text}, {"region", type text}, {"monthly_rent_gbp", type number}, {"staff_headcount", Int64.Type}, {"monthly_staffing_cost_gbp", type number}, {"loyalty_adoption_rate", type number}, {"seating_capacity", Int64.Type}, {"opening_year", Int64.Type}, {"store_status", type text}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+
