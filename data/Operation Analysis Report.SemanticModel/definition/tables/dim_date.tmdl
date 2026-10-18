@@ -250,6 +250,10 @@ table dim_date
 			lineageTag: b5166868-4e80-4e53-b73b-b82e98f0a6cf
 			column: month_name
 
+		level day_of_week
+			lineageTag: 1f1f635e-674a-48f5-aef9-bf1f0d1bbd3b
+			column: day_of_week
+
 	partition dim_date = m
 		mode: import
 		source =
@@ -257,7 +261,7 @@ table dim_date
 				  Source = Csv.Document(File.Contents("D:\DataDNA Dataset Challenge - 2026- 10 - Sunrise Coffee Chain\data\dim_date.csv"), [Delimiter = ",", Columns = 11, QuoteStyle = QuoteStyle.None]),
 				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
 				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"date_id", Int64.Type}, {"full_date", type date}, {"year", Int64.Type}, {"month_number", Int64.Type}, {"month_name", type text}, {"quarter", Int64.Type}, {"week_number", Int64.Type}, {"day_of_week", type text}, {"is_weekend", type logical}, {"is_uk_bank_holiday", type logical}, {"uk_trading_calendar", type text}}),
-				  #"Extracted first characters" = Table.TransformColumns(#"Changed column type", {{"month_name", each Text.Start(_, 3), type text}, {"day_of_week", each Text.Start(_, 3), type text}}),
+				  #"Extracted first characters" = Table.TransformColumns(#"Changed column type", {{"month_name", each Text.Start(_, 1), type text}, {"day_of_week", each Text.Start(_, 1), type text}}),
 				  #"Inserted day of week" = Table.AddColumn(#"Extracted first characters", "Day of week", each Date.DayOfWeek([full_date]), type nullable number),
 				  #"Renamed columns" = Table.RenameColumns(#"Inserted day of week", {{"Day of week", "Day of week number"}}),
 				  #"Inserted start of year" = Table.AddColumn(#"Renamed columns", "Start of year", each Date.StartOfYear([full_date]), type nullable date),

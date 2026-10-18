@@ -31,7 +31,7 @@ table 'Waterfall Lines'
 				        {"COGS", 2},
 				        {"Rent", 3},
 				        {"Staffing", 4},
-				        {"Loyalty Cost", 5},
+				        {"Loyalty", 5},
 				        {"Other / Unallocated", 6}
 				    }
 				)

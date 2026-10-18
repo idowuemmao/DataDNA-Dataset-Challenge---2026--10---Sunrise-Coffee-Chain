@@ -97,7 +97,7 @@ table 'Measure Table'
 			    "COGS", -cogs,
 			    "Rent", -rent,
 			    "Staffing", -staff,
-			    "Loyalty Cost", -loy,
+			    "Loyalty", -loy,
 			    "Other / Unallocated", IF(ABS(other) < 1, BLANK(), other)
 			)
 		lineageTag: f26ff776-40ca-42d3-bbfc-34a3bb010f82
@@ -177,6 +177,37 @@ table 'Measure Table'
 			FORMAT([Loyalty Cost % Rev], "0.0%") & " of revenue. " &
 			"Action: prioritise rent renegotiation and redemption-rule changes in the flagged stores."
 		lineageTag: 8b7ef86d-0d45-427d-a9ad-b19a8baa0c2d
+
+	measure 'Rev & Profit label' = FORMAT([Revenue]/1000000, "#0.00M") & "  | " & FORMAT([Net Margin %], "0.00%")
+		lineageTag: 333a5f4f-6c52-454b-96ca-9e1148f99985
+
+	measure 'Fixed Cost % Rev' = [Rent % Rev] + [Staffing % Rev]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 01423598-82b6-4f12-b876-69a415793877
+
+	measure 'Ref Revenue' =
+			
+			VAR py = CALCULATE([Revenue], SAMEPERIODLASTYEAR(dim_date[full_date]))
+			VAR g = DIVIDE([Revenue] - py, py)
+			RETURN IF(ISBLANK(py), "No prior-year data to compare",
+			    IF(g >= 0, "▲ ", "▼ ") & FORMAT(ABS(g), "0.0%") & " vs same period LY")
+		lineageTag: f67d9754-53b1-4da9-8841-03ae17ed95fa
+
+	measure 'Ref Net Profit' =
+			
+			VAR py = CALCULATE([Net Profit], SAMEPERIODLASTYEAR(dim_date[full_date]))
+			VAR d = [Net Profit] - py
+			VAR dTxt = IF(ABS(d) >= 1000000, FORMAT(ABS(d)/1000000, "£0.0") & "M", FORMAT(ABS(d)/1000, "£#,0") & "K")
+			RETURN IF(ISBLANK(py), "No prior-year data to compare",
+			    IF(d >= 0, "▲ ", "▼ ") & dTxt & " vs same period LY")
+		lineageTag: d0964d4b-8f26-4aae-87f6-d9eda7d212a8
+
+	measure 'Ref Net Margin' =
+			
+			VAR gap = [Margin Gap (pts)]
+			RETURN FORMAT(ABS(gap), "0.00%") & " " & IF(gap >= 0, "above", "below") &
+			    " network margin of " & FORMAT([Network Margin %], "0.00%")
+		lineageTag: e56c1099-98c1-40d6-bc86-2ea9e573a2bd
 
 	partition 'Measure Table' = m
 		mode: import
