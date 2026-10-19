@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "72b1e7155aa53d0e13ee",
   "position": {
-    "x": 39.445843828715368,
-    "y": 272.04030226700252,
+    "x": 20.629316960859555,
+    "y": 262.28702993092867,
     "z": 1000,
-    "height": 420.30226700251893,
-    "width": 1307.1536523929472,
+    "height": 421.42747505755949,
+    "width": 1318.8027628549503,
     "tabOrder": 1000
   },
   "visual": {
@@ -94,6 +94,38 @@
               "queryRef": "dim_date.year Hierarchy.day_of_week",
               "nativeQueryRef": "year Hierarchy day_of_week",
               "active": false
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Net Profit"
+                }
+              },
+              "queryRef": "Measure Table.Net Profit",
+              "nativeQueryRef": "Net Profit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "COGS"
+                }
+              },
+              "queryRef": "Measure Table.COGS",
+              "nativeQueryRef": "COGS"
             }
           ]
         },
@@ -217,6 +249,13 @@
                   "Value": "12D"
                 }
               }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
+                }
+              }
             }
           }
         }
@@ -285,7 +324,29 @@
       ],
       "lineStyles": [
         {
-          "properties": {}
+          "properties": {
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -297,6 +358,19 @@
               "expr": {
                 "Literal": {
                   "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

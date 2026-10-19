@@ -6,15 +6,18 @@
   "textClasses": {
     "callout": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
-      "fontSize": 24
+      "fontSize": 24,
+      "color": "#3257a8"
     },
     "title": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
-      "fontSize": 16
+      "fontSize": 16,
+      "color": "#3257A8"
     },
     "header": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
-      "fontSize": 16
+      "fontSize": 16,
+      "color": "#3257a8"
     },
     "label": {
       "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
@@ -24,15 +27,6 @@
   "visualStyles": {
     "*": {
       "*": {
-        "background": [
-          {
-            "color": {
-              "solid": {
-                "color": "#F9F7F2"
-              }
-            }
-          }
-        ],
         "outspacePane": [
           {
             "backgroundColor": {
@@ -54,6 +48,15 @@
           {
             "$id": "Available",
             "backgroundColor": {
+              "solid": {
+                "color": "#F9F7F2"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "color": {
               "solid": {
                 "color": "#F9F7F2"
               }
@@ -88,7 +91,12 @@
         ],
         "background": [
           {
-            "transparency": 0
+            "transparency": 0,
+            "color": {
+              "solid": {
+                "color": "#FAFAFA"
+              }
+            }
           }
         ]
       }

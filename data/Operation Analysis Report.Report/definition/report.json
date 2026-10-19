@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "Frontier10199127509808781.json",
+      "name": "Frontier8139846866147864.json",
       "reportVersionAtImport": {
         "visual": "2.14.0",
         "report": "3.4.0",
@@ -65,9 +65,19 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "Frontier10199127509808781.json",
-          "path": "Frontier10199127509808781.json",
+          "name": "Frontier8139846866147864.json",
+          "path": "Frontier8139846866147864.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "images04195779032163627.jpg",
+          "path": "images04195779032163627.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "reset_989931916467132525700434.png",
+          "path": "reset_989931916467132525700434.png",
+          "type": "Image"
         }
       ]
     }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a1d72f34a5dfdc7c7e98",
   "position": {
-    "x": 39.445843828715368,
-    "y": 701.86397984886651,
+    "x": 20.165975103734439,
+    "y": 697.22470997436358,
     "z": 3000,
-    "height": 378.13602015113349,
-    "width": 746.750629722922,
+    "height": 369.70954356846471,
+    "width": 766.30705394190875,
     "tabOrder": 3000
   },
   "visual": {
@@ -77,20 +77,6 @@
               },
               "queryRef": "Measure Table.Revenue",
               "nativeQueryRef": "Revenue"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure Table"
-                    }
-                  },
-                  "Property": "Net Profit"
-                }
-              },
-              "queryRef": "Measure Table.Net Profit",
-              "nativeQueryRef": "Net Profit"
             }
           ]
         }
@@ -105,7 +91,7 @@
                     "Entity": "Measure Table"
                   }
                 },
-                "Property": "Net Profit"
+                "Property": "Revenue"
               }
             },
             "direction": "Descending"
@@ -193,6 +179,29 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "categoryAxis": [
@@ -202,6 +211,20 @@
               "expr": {
                 "Literal": {
                   "Value": "14D"
+                }
+              }
+            },
+            "outerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
                 }
               }
             }
@@ -272,6 +295,27 @@
                   "Value": "false"
                 }
               }
+            },
+            "labelOverflow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "optimizeLabelDisplay": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "detailFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
             }
           }
         },
@@ -299,6 +343,18 @@
               }
             ],
             "highlightMatching": 1
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
           }
         }
       ]

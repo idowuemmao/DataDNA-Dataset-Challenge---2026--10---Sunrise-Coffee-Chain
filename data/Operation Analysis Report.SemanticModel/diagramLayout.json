@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 119.21731470725126,
+        "x": 0,
         "y": 0
       },
       "nodes": [
@@ -37,12 +37,12 @@
         {
           "location": {
             "x": 0,
-            "y": 368.53339379146621
+            "y": 684.55362350188739
           },
           "nodeIndex": "dim_store",
           "nodeLineageTag": "c771f597-4581-4f06-acc8-2b247052c4b9",
           "size": {
-            "height": 422.61198380978385,
+            "height": 446.3135010380654,
             "width": 234
           },
           "zIndex": 0
@@ -63,12 +63,12 @@
         {
           "location": {
             "x": 50,
-            "y": -50
+            "y": 0
           },
           "nodeIndex": "fact_store_monthly_profitability",
           "nodeLineageTag": "f31cf9cd-193a-486c-91ac-64130d08c00e",
           "size": {
-            "height": 300,
+            "height": 600.21921822490026,
             "width": 234
           },
           "zIndex": 0

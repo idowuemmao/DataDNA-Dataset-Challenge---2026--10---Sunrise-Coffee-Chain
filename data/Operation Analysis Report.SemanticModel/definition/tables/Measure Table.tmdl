@@ -209,6 +209,66 @@ table 'Measure Table'
 			    " network margin of " & FORMAT([Network Margin %], "0.00%")
 		lineageTag: e56c1099-98c1-40d6-bc86-2ea9e573a2bd
 
+	measure 'Ref Loss Share' =
+			
+			VAR n = [Loss-Making Stores]
+			VAR t = [Active Stores]
+			RETURN
+			IF(n = 0, "No loss-making stores in this selection",
+			    n & IF(n = 1, " store is", " stores are") & " loss-making, out of " & t &
+			    " (" & FORMAT(DIVIDE(n, t), "0%") & " of stores)")
+		lineageTag: f174d805-bead-438a-a073-5afb4009c59c
+
+	measure 'Active Stores' = DISTINCTCOUNT(fact_store_monthly_profitability[store_id])
+		formatString: 0
+		lineageTag: 2f866cc9-823d-4f38-86ba-26c318bfe069
+
+	measure 'Ref Fixed Cost' =
+			
+			VAR net = CALCULATE([Fixed Cost % Rev], ALL(dim_store))
+			VAR gap = [Fixed Cost % Rev] - net
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") &
+			    " network (" & FORMAT(net, "0.00%") & ") - rent + staffing"
+		lineageTag: 950b8915-adbd-4551-8ac9-23eec98b5ac3
+
+	measure 'Ref Loss Revenue Share' =
+			
+			FORMAT([Loss Store Revenue Share], "0.00%") & " of revenue comes from loss-making stores"
+		lineageTag: 7a1e1db0-7616-4770-9f50-b7ea0de3a110
+
+	measure 'Margin Recovery Potential' =
+			
+			VAR netM = [Network Margin %]
+			RETURN
+			SUMX(
+			    VALUES(dim_store[store_id]),
+			    VAR r = [Revenue]
+			    VAR m = [Net Margin %]
+			    RETURN IF(NOT ISBLANK(m) && m < netM, (netM - m) * r, 0)
+			)
+		formatString: #,0.00
+		lineageTag: c4892419-35a4-4773-b3db-b8d7e5cffa48
+
+	measure 'Below-Par Stores' =
+			
+			VAR netM = [Network Margin %]
+			RETURN
+			COUNTROWS(FILTER(VALUES(dim_store[store_id]), [Net Margin %] < netM))
+		formatString: 0
+		lineageTag: 21d2a28f-b406-49be-a1ac-82bab8ce1e33
+
+	measure 'Ref Margin Recovery' =
+			
+			VAR n = [Below-Par Stores]
+			VAR netM = [Network Margin %]
+			RETURN
+			IF(n = 0, "All stores are at or above network margin of " & FORMAT(netM, "0.0%"),
+			    IF([Net Profit] > 0,
+			        "+" & FORMAT(DIVIDE([Margin Recovery Potential], [Net Profit]), "0.0%") &
+			            " on net profit if " & n & IF(n = 1, " store", " stores") & " reach " & FORMAT(netM, "0.0%"),
+			        n & IF(n = 1, " store", " stores") & " below network margin of " & FORMAT(netM, "0.0%")))
+		lineageTag: 13511e6e-e5b0-4ddd-bd64-633fde85c4e4
+
 	partition 'Measure Table' = m
 		mode: import
 		source =
