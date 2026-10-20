@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "33e7fb64b15a7cc24308",
   "position": {
-    "x": 752.94117647058829,
-    "y": 696.47058823529414,
+    "x": 699.14357682619652,
+    "y": 696.42317380352642,
     "z": 4000,
-    "height": 369.62566844919786,
-    "width": 857.32620320855619,
+    "height": 369.97481108312343,
+    "width": 911.33501259445848,
     "tabOrder": 4000
   },
   "visual": {
@@ -60,11 +60,11 @@
                       "Entity": "Measure Table"
                     }
                   },
-                  "Property": "Avg Footfall"
+                  "Property": "Revenue per Staff Hour"
                 }
               },
-              "queryRef": "Measure Table.Avg Footfall",
-              "nativeQueryRef": "Avg Footfall"
+              "queryRef": "Measure Table.Revenue per Staff Hour",
+              "nativeQueryRef": "Revenue per Staff Hour"
             }
           ]
         },

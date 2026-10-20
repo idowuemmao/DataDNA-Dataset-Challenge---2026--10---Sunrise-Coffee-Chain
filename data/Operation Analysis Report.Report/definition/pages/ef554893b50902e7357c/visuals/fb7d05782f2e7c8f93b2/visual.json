@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_store_monthly_profitability"
+                      "Entity": "dim_store"
                     }
                   },
-                  "Property": "Margin Band"
+                  "Property": "location_type"
                 }
               },
-              "queryRef": "fact_store_monthly_profitability.Margin Band",
-              "nativeQueryRef": "Margin Band",
+              "queryRef": "dim_store.location_type",
+              "nativeQueryRef": "location_type",
               "active": true
             }
           ]
@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Margin Band'"
+                  "Value": "'Location Type'"
                 }
               }
             }

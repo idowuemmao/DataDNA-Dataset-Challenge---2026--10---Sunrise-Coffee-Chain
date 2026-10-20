@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_store_monthly_profitability"
+                      "Entity": "dim_store"
                     }
                   },
-                  "Property": "rent_band"
+                  "Property": "city"
                 }
               },
-              "queryRef": "fact_store_monthly_profitability.rent_band",
-              "nativeQueryRef": "rent_band",
+              "queryRef": "dim_store.city",
+              "nativeQueryRef": "city",
               "active": true
             }
           ]
@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rent Band'"
+                  "Value": "'City'"
                 }
               }
             }

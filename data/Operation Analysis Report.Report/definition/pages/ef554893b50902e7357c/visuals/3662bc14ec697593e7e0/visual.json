@@ -6,7 +6,7 @@
     "y": 11.978609625668451,
     "z": 6000,
     "height": 90.695187165775408,
-    "width": 722.13903743315507,
+    "width": 850.48128342245991,
     "tabOrder": 6000
   },
   "visual": {
@@ -80,7 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Profit Leakage (“High revenue, thin profit”)'"
+                  "Value": "'Peak Demand vs Staffing Efficiency'"
                 }
               }
             },
@@ -119,7 +119,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue growth is masking stores where fixed costs and redemptions erode the margin.'"
+                  "Value": "'staffing cost isn’t aligned to demand. Stores are over-staffed in dead periods and strained in peak periods.'"
                 }
               }
             },

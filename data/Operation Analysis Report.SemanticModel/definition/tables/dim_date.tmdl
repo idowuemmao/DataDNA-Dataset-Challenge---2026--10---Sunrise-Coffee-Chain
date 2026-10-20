@@ -212,6 +212,17 @@ table dim_date
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Day name'
+		dataType: string
+		lineageTag: 7cbd107e-ccee-4a92-aff8-2d46ddd405b4
+		summarizeBy: none
+		sourceColumn: Day name
+		sortByColumn: 'Day of week number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Date Hierarchy'
 		lineageTag: f14111fe-8e24-4086-bafe-bae3509ac7b7
 
@@ -271,9 +282,11 @@ table dim_date
 				  #"Inserted start of day" = Table.AddColumn(#"Inserted start of week", "Start of day", each Date.StartOfDay([full_date]), type nullable date),
 				  #"Added prefix" = Table.TransformColumns(#"Inserted start of day", {{"quarter", each "Qtr" & Text.From(_), type text}}),
 				  #"Inserted quarter" = Table.AddColumn(#"Added prefix", "Quarter (2)", each Date.QuarterOfYear([full_date]), type nullable number),
-				  #"Renamed columns 1" = Table.RenameColumns(#"Inserted quarter", {{"Quarter (2)", "Quarter No"}})
+				  #"Renamed columns 1" = Table.RenameColumns(#"Inserted quarter", {{"Quarter (2)", "Quarter No"}}),
+				  #"Inserted day name" = Table.AddColumn(#"Renamed columns 1", "Day name", each Date.DayOfWeekName([full_date]), type nullable text),
+				  #"Extracted first characters 1" = Table.TransformColumns(#"Inserted day name", {{"Day name", each Text.Start(_, 3), type text}})
 				in
-				  #"Renamed columns 1"
+				  #"Extracted first characters 1"
 
 	annotation PBI_ResultType = Table
 

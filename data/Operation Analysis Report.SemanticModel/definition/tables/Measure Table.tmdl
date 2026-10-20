@@ -2,15 +2,19 @@ table 'Measure Table'
 	lineageTag: 4fda4096-cb75-4d9d-a105-10347004ba2b
 
 	measure Revenue = SUM(fact_store_monthly_profitability[total_monthly_revenue_gbp])
-		formatString: #,0.00
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: d95b56c7-4a04-40f2-8ff9-0f741e1509b5
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	measure 'Net Profit' = ```
 			SUM(fact_store_monthly_profitability[net_profit_gbp])
 			
 			```
-		formatString: #,0.00
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: db497854-d29e-45e6-ab92-316fb9d3f70f
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	measure 'Net Margin %' = ```
 			DIVIDE([Net Profit], [Revenue])
@@ -105,9 +109,10 @@ table 'Measure Table'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Revenue per Staff Hour' = DIVIDE(SUM(fact_daily_sales[total_revenue_gbp]), SUM(fact_daily_sales[total_staff_hours]))
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: 0930b823-9dfd-4932-8b8e-2b36147f626d
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	measure 'Transaction per Staff Hour' = DIVIDE(SUM(fact_daily_sales[total_transactions]), SUM(fact_daily_sales[total_staff_hours]))
 		lineageTag: a3b0066d-6ae0-4ae6-904f-d3ea59fce701
@@ -127,9 +132,10 @@ table 'Measure Table'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Revenue per Footfall' = DIVIDE(SUM(fact_daily_sales[total_revenue_gbp]), SUM(fact_daily_sales[footfall]))
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: dcbd0161-0f6b-4c22-bd3e-f96b32a22aa3
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	measure 'P2 Insight' =
 			
@@ -178,7 +184,7 @@ table 'Measure Table'
 			"Action: prioritise rent renegotiation and redemption-rule changes in the flagged stores."
 		lineageTag: 8b7ef86d-0d45-427d-a9ad-b19a8baa0c2d
 
-	measure 'Rev & Profit label' = FORMAT([Revenue]/1000000, "#0.00M") & "  | " & FORMAT([Net Margin %], "0.00%")
+	measure 'Rev & Profit label' = FORMAT([Revenue]/1000000, "£#0.00M") & "  | " & FORMAT([Net Margin %], "0.00%")
 		lineageTag: 333a5f4f-6c52-454b-96ca-9e1148f99985
 
 	measure 'Fixed Cost % Rev' = [Rent % Rev] + [Staffing % Rev]
@@ -246,8 +252,10 @@ table 'Measure Table'
 			    VAR m = [Net Margin %]
 			    RETURN IF(NOT ISBLANK(m) && m < netM, (netM - m) * r, 0)
 			)
-		formatString: #,0.00
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: c4892419-35a4-4773-b3db-b8d7e5cffa48
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	measure 'Below-Par Stores' =
 			
@@ -268,6 +276,109 @@ table 'Measure Table'
 			            " on net profit if " & n & IF(n = 1, " store", " stores") & " reach " & FORMAT(netM, "0.0%"),
 			        n & IF(n = 1, " store", " stores") & " below network margin of " & FORMAT(netM, "0.0%")))
 		lineageTag: 13511e6e-e5b0-4ddd-bd64-633fde85c4e4
+
+	measure 'Ref Rev per Staff Hr' =
+			
+			VAR net = CALCULATE([Revenue per Staff Hour], ALL(dim_store))
+			VAR d = [Revenue per Staff Hour] - net
+			RETURN FORMAT(ABS(d), "£0.00") & " " & IF(d >= 0, "above", "below") &
+			    " network average of " & FORMAT(net, "£0.00")
+		lineageTag: 8f3ab9ca-9803-4970-aeb1-8402854c216e
+
+	measure 'Ref Staffing %' =
+			
+			VAR net = CALCULATE([Staffing % Rev], ALL(dim_store))
+			VAR gap = [Staffing % Rev] - net
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") &
+			    " network (" & FORMAT(net, "0.00%") & ")"
+		lineageTag: c4232117-bf24-49bb-b15d-2d301399085e
+
+	measure 'Ref Peak-to-Dead' =
+			
+			VAR net = CALCULATE([Peak-to-Dead Ratio], ALL(dim_store))
+			RETURN "Peak hours carry " & FORMAT([Peak-to-Dead Ratio], "0.00") & "x dead-hour volume (network " &
+			    FORMAT(net, "0.00") & "x)"
+		lineageTag: f250d0a1-6e47-470a-ac5b-f82499b3b30b
+
+	measure 'Ref Dwell Time' =
+			
+			VAR net = CALCULATE([Avg Dwell Time], ALL(dim_store))
+			VAR d = [Avg Dwell Time] - net
+			RETURN FORMAT(ABS(d), "0.00") & " min " & IF(d >= 0, "longer", "shorter") &
+			    " than network average of " & FORMAT(net, "0.00") & " min"
+		lineageTag: 1349204d-499b-4a6e-8ab8-825c14812f73
+
+	measure 'Ref Txn per Staff Hr' =
+			
+			VAR net = CALCULATE([Transaction per Staff Hour], ALL(dim_store))
+			VAR d = [Transaction per Staff Hour] - net
+			RETURN FORMAT(ABS(d), "0.00") & " " & IF(d >= 0, "above", "below") &
+			    " network average of " & FORMAT(net, "0.00")
+		lineageTag: 3a3927f2-52e6-4abd-8979-331e2d799168
+
+	measure 'Ref Rev per Footfall' =
+			
+			VAR net = CALCULATE([Revenue per Footfall], ALL(dim_store))
+			VAR d = [Revenue per Footfall] - net
+			RETURN FORMAT(ABS(d), "£0.00") & " " & IF(d >= 0, "above", "below") &
+			    " network (" & FORMAT(net, "£0.00") & ") per visitor"
+		lineageTag: a68e6550-972d-4c5c-88a8-2a958da83334
+
+	measure 'Flagged Stores Margin Gap' =
+			
+			AVERAGEX(
+			    FILTER(VALUES(dim_store[store_id]), [Store Risk Score] >= 3),
+			    [Margin Gap (pts)]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 885429de-d020-4acd-b35e-0a0891621146
+
+	measure 'Ref Loyalty Revenue' =
+			
+			VAR net = CALCULATE([Loyalty Revenue %], ALL(dim_store))
+			RETURN "Members drive " & FORMAT([Loyalty Revenue %], "0.00%") & " of spend (network " & FORMAT(net, "0.00%") & ")"
+		lineageTag: 64c34504-ef92-41b7-a48f-145d548c2771
+
+	measure 'Ref Loyalty Cost' =
+			
+			VAR net = CALCULATE([Loyalty Cost % Rev], ALL(dim_store))
+			VAR gap = [Loyalty Cost % Rev] - net
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") &
+			    " network (" & FORMAT(net, "0.00%") & ") redemption cost"
+		lineageTag: 71ac9b0d-5329-42cf-9b30-86bee79324bf
+
+	measure 'Ref Rent %' = ```
+			
+			VAR net = CALCULATE([Rent % Rev], ALL(dim_store))
+			VAR gap = [Rent % Rev] - net
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, "above", " below") &
+			    " network rent burden of " & FORMAT(net, "0.00%")
+			
+			```
+		lineageTag: 7db4e635-8af1-4c2c-b5ae-5c5dab2a217c
+
+	measure 'Ref Gross Margin' =
+			
+			VAR net = CALCULATE([Gross Margin %], ALL(dim_store))
+			VAR gap = [Gross Margin %] - net
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap >= 0, " above", " below") &
+			    " network gross margin of " & FORMAT(net, "0.00%")
+		lineageTag: d9b0e565-225e-4c57-9af3-9f8f887609d7
+
+	measure 'Ref Stores Action' =
+			
+			VAR pct = DIVIDE([Stores Needing Action], [Active Stores])
+			RETURN
+			[Stores Needing Action] & " of " & [Active Stores] & " stores (" &  FORMAT(pct,"0.00%") & ") score 3+ on structural risk"
+		lineageTag: a77dacd0-2973-4c61-b550-8d34b87c1d5d
+
+	measure 'Ref Flagged Gap' =
+			
+			VAR g = [Flagged Stores Margin Gap]
+			RETURN IF(ISBLANK(g), "No stores currently flagged",
+			    "Flagged stores run " & FORMAT(ABS(g), "0.00%") &
+			    IF(g < 0, " below", " above") & " network margin")
+		lineageTag: 1aaabcd7-1512-4689-9c5e-309f3d53624c
 
 	partition 'Measure Table' = m
 		mode: import
