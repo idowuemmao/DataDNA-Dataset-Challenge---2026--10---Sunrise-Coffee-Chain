@@ -222,7 +222,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Does higher staffing cost really erode margin?'"
+                  "Value": "'Does loyalty adoption change margin?'"
                 }
               }
             }
@@ -235,7 +235,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Each step to the right is a store giving more revenue to payroll. Hover for region and rent band.'"
+                  "Value": "'Staffing % of revenue vs net margin per store, coloured by current store status. '"
                 }
               }
             }

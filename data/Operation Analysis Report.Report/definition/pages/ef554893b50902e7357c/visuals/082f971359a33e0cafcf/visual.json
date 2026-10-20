@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "082f971359a33e0cafcf",
   "position": {
-    "x": 1208.2885648503454,
-    "y": 210.71373752877975,
+    "x": 1256,
+    "y": 194,
     "z": 2000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 280,
+    "width": 424,
     "tabOrder": 2000
   },
   "visual": {
@@ -97,6 +97,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: how heavily each format’s demand falls in peak hours compared with dead hours. How to read it: a larger slice means a higher peak-to-dead ratio. Slices are not additive, so they show relative pressure and not volume.'"
                 }
               }
             }

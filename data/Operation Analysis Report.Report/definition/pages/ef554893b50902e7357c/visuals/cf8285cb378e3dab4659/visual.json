@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "cf8285cb378e3dab4659",
   "position": {
-    "x": 1449.4117647058824,
-    "y": 261.81818181818181,
+    "x": 1442,
+    "y": 262,
     "z": 2000,
-    "height": 420.96256684491982,
-    "width": 455.18716577540107,
+    "height": 422,
+    "width": 462,
     "tabOrder": 2000
   },
   "visual": {
@@ -132,6 +132,34 @@
               "expr": {
                 "Literal": {
                   "Value": "140L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Does peak-hour pressure differ by store format?'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Peak-to-dead transaction ratio by format.'"
                 }
               }
             }

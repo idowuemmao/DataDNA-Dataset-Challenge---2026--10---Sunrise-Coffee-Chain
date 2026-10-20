@@ -238,6 +238,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NA'"
+                }
+              }
             }
           },
           "selector": {
@@ -492,6 +499,22 @@
             "metadata": "Measure Table.Revenue per Footfall",
             "id": "field-101034bb-fe40-99e5-dd41-ba9a69ed3bfa",
             "order": 0
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]

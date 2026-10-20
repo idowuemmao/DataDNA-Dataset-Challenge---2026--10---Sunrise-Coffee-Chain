@@ -99,6 +99,13 @@
                   "Value": "16D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Info Overlay, Reset Button and Filter Button'"
+                }
+              }
             }
           },
           "selector": {

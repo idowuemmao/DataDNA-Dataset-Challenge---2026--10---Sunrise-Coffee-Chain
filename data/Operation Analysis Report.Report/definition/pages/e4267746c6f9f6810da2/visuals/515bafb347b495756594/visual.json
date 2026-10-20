@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "515bafb347b495756594",
   "position": {
-    "x": 138.60962566844921,
-    "y": 11.978609625668451,
+    "x": 138,
+    "y": 12,
     "z": 6000,
-    "height": 90.695187165775408,
-    "width": 593.79679144385034,
+    "height": 90,
+    "width": 708,
     "tabOrder": 6000
   },
   "visual": {
@@ -80,7 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Profit Leakage'"
+                  "Value": "'Structural Cost and Action Plan'"
                 }
               }
             },
@@ -118,13 +118,8 @@
           "properties": {
             "text": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure Table"
-                    }
-                  },
-                  "Property": "P1 subtitle"
+                "Literal": {
+                  "Value": "'Structural losses sit in a few stores, and rent and staffing are the cause, not loyalty'"
                 }
               }
             },

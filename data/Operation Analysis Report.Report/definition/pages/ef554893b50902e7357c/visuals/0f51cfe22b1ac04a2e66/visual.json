@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "0f51cfe22b1ac04a2e66",
   "position": {
-    "x": 434.68917881811205,
-    "y": 605.61780506523417,
+    "x": 248,
+    "y": 626,
     "z": 3000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 180,
+    "width": 418,
     "tabOrder": 3000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: labour productivity by day and shift. How to read it: darker cells earn more per staff hour. If every cell is similar, shifts are not aligned to demand. '"
                 }
               }
             }

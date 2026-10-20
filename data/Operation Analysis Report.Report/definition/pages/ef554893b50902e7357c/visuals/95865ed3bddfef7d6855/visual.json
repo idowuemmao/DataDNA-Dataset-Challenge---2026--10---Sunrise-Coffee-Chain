@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "95865ed3bddfef7d6855",
   "position": {
-    "x": 1077.145049884881,
-    "y": 679.293937068304,
+    "x": 1066,
+    "y": 696,
     "z": 4000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 232,
+    "width": 424,
     "tabOrder": 4000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: the link between staffing intensity and profitability. How to read it: each step right is a store giving more revenue to payroll, and a downward slope means lower margin. Colour marks the store’s current status.'"
                 }
               }
             }

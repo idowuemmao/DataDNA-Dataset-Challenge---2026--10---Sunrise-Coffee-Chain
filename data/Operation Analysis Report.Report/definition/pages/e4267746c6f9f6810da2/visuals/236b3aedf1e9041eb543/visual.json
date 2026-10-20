@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "236b3aedf1e9041eb543",
   "position": {
-    "x": 1091.7647058823529,
-    "y": 740.96256684491982,
+    "x": 1176,
+    "y": 678,
     "z": 4000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 202,
+    "width": 462,
     "tabOrder": 4000
   },
   "visual": {
@@ -97,6 +97,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: whether stores with more loyalty spend earn better or worse margins. How to read it: a flat cloud around the average line means no link; the correlation is in the page insight. Colour marks the store’s current status.'"
                 }
               }
             }

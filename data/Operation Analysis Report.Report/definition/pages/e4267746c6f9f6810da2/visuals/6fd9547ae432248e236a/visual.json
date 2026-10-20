@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6fd9547ae432248e236a",
   "position": {
-    "x": 301.1764705882353,
-    "y": 249.83957219251337,
+    "x": 302,
+    "y": 250,
     "z": 1000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 222,
+    "width": 344,
     "tabOrder": 1000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: margin against rent burden across three rent bands. How to read it: as rent % climbs, check whether margin falls with it.'"
                 }
               }
             }

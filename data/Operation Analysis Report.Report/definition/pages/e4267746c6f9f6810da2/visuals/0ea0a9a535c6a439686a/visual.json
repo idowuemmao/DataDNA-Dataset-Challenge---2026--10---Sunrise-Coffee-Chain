@@ -97,11 +97,11 @@
                       "Entity": "Measure Table"
                     }
                   },
-                  "Property": "Priority Action"
+                  "Property": "Primary Cost Driver"
                 }
               },
-              "queryRef": "Measure Table.Priority Action",
-              "nativeQueryRef": "Priority Action"
+              "queryRef": "Measure Table.Primary Cost Driver",
+              "nativeQueryRef": "Primary Cost Driver"
             },
             {
               "field": {
@@ -111,11 +111,11 @@
                       "Entity": "Measure Table"
                     }
                   },
-                  "Property": "Primary Cost Driver"
+                  "Property": "Priority Action"
                 }
               },
-              "queryRef": "Measure Table.Primary Cost Driver",
-              "nativeQueryRef": "Primary Cost Driver"
+              "queryRef": "Measure Table.Priority Action",
+              "nativeQueryRef": "Priority Action"
             }
           ]
         }
@@ -145,7 +145,7 @@
             "rowPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "8D"
                 }
               }
             }
@@ -337,6 +337,17 @@
                   "Value": "'fitToContent'"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#616161'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -356,6 +367,34 @@
             "metadata": "dim_store.region"
           }
         }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#616161'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#616161'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -372,7 +411,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'show'"
+                  "Value": "'Which stores need action, and which cost do we fix first?'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stores scoring 2 or 3 on margin gap, staffing and rent, with each store’s primary cost driver and recommended action.'"
                 }
               }
             }

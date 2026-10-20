@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "025558becc92a6bc4da2",
   "position": {
-    "x": 1469.1020721412126,
-    "y": 605.61780506523417,
+    "x": 1580,
+    "y": 672.22222222222217,
     "z": 5000,
-    "height": 162.08749040675366,
-    "width": 284.38986953184963,
+    "height": 123.33333333333333,
+    "width": 170,
     "tabOrder": 5000
   },
   "visual": {
@@ -97,6 +97,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Insight Text and Action Plan'"
                 }
               }
             }

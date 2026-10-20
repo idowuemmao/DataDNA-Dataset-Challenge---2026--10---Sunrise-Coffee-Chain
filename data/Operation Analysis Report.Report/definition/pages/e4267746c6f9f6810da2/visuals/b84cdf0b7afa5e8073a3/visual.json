@@ -99,6 +99,13 @@
                   "Value": "16D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: profitability beside rent burden at each level. How to read it: a short margin bar with a long rent bar marks a rent-driven problem, so drill down to find where.'"
+                }
+              }
             }
           },
           "selector": {

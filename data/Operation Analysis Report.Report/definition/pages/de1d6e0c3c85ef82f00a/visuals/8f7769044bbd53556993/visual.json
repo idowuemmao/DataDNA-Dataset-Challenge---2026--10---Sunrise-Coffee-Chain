@@ -5,7 +5,7 @@
     "x": 936.04278074866318,
     "y": 657.11229946524065,
     "z": 4000,
-    "height": 201.92513368983958,
+    "height": 256.68449197860963,
     "width": 533.903743315508,
     "tabOrder": 4000
   },
@@ -96,7 +96,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'What it shows: each dot is a store, plotting total revenue against net margin. How to read it: lower-right means high volume but thin margin, and the red zone is loss-making. Basis: monthly profit table. Caution: extreme store-months (down to −339%) can stretch the axis, so use the Year slicer or cap the Y axis.'"
+                  "Value": "'What it shows: each dot is a store’s revenue against net margin. How to read it: below the 0% line means loss-making; lower right means volume without profit. Colour marks the store’s current status (Active, Temporarily-Closed or Refurbishing). Basis: monthly profit table. Caution: status is a snapshot, so closed or refurbishing stores still show full trading history. A few extreme store-months can stretch the Y axis.'"
                 }
               }
             }

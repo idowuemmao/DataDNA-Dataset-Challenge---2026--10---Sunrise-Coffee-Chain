@@ -28,6 +28,17 @@
                   "Value": "'middle'"
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#616161'"
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {

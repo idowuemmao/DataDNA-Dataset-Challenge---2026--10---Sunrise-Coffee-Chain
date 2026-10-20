@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a51c36d5f489e45450b1",
   "position": {
-    "x": 478.894858019954,
-    "y": 250.49884881043747,
+    "x": 386,
+    "y": 334,
     "z": 1000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 186,
+    "width": 404,
     "tabOrder": 1000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: month-by-month productivity ranking of each store status. How to read it: a ribbon crossing another means a rank change; thicker ribbons mean higher values. '"
                 }
               }
             }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "fe841115b59cee22527e",
   "position": {
-    "x": 400.427807486631,
-    "y": 715.2941176470589,
+    "x": 248,
+    "y": 716,
     "z": 3000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 202,
+    "width": 556,
     "tabOrder": 3000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: a ranked action list. How to read it: each store gets one point each for margin below the network, staffing above the network and rent above the network. A score of 3 is “Restructure”, 2 is “Monitor”. Primary Cost Driver shows whichever of staffing or rent exceeds the network by more.'"
                 }
               }
             }

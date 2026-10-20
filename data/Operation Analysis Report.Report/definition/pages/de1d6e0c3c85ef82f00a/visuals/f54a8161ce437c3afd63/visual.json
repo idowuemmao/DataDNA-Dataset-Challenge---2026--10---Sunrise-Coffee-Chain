@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f54a8161ce437c3afd63",
   "position": {
-    "x": 434.65240641711233,
+    "x": 314.86631016042782,
     "y": 605.77540106951869,
     "z": 3000,
-    "height": 253.26203208556151,
-    "width": 403.85026737967917,
+    "height": 308.02139037433159,
+    "width": 580.10695187165777,
     "tabOrder": 3000
   },
   "visual": {
@@ -96,7 +96,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'What it shows: the stores at both ends of the profit ranking. How to read it: compare the red bars with their rent and staffing on the other visuals. Basis: net profit summed over the selected period. Caution: a short period or a Year filter changes who appears.'"
+                  "Value": "'What it shows: the sources of revenue, starting from location type. How to read it: click a bar and drill down to see which regions and cities drive it. Compare the shares with the scatter to see whether big revenue sources are profitable. Basis: monthly profit table. Caution: in your data City-Centre stores generate about half of revenue, and Train-Station is only 2 stores. At city level 36 of 48 cities have one store and the rest have two, so city bars are close to single-store results. This visual shows revenue only, not profit.'"
                 }
               }
             }

@@ -19262,9 +19262,510 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure_table.P1_subtitle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "P1 subtitle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "P1 subtitle": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "subtitle": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "p1 slogan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 legend": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 header": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 footer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 surtitle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 supertitle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "slogan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "legend": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.P1_overlay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "P1 Overlay"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "P1 overlay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "overlay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "p1 intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p1 connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "p1 overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p1 edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p1 join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.loss_months_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Loss Months %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loss months %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "loss month percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "loss month pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.P2_overlay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "P2 Overlay"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "P2 overlay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "overlay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "p2 intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p2 connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "p2 overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p2 edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p2 join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.year": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_year"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day"
+			          }
+			        },
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_have_start_of_day_date_hierarchy"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_day": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_week.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_week.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_week.day": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_week.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_week.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_week.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_week_date_hierarchy_have_start_of_week_day"
+			        }
+			      ]
+			    },
 			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_month": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
@@ -20614,6 +21115,171 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_stores_have_fact_store_monthly_profitability"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_P2_overlay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.P2_overlay": {
+			          "Target": {
+			            "Entity": "measure_table.P2_overlay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P2_overlay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_P2_overlay"
+			        }
+			      ]
+			    },
+			    "fact_daily_sale_has_measure_table_P2_overlay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_daily_sales"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_daily_sale": {
+			          "Target": {
+			            "Entity": "fact_daily_sale"
+			          }
+			        },
+			        "measure_table.P2_overlay": {
+			          "Target": {
+			            "Entity": "measure_table.P2_overlay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_daily_sale"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P2_overlay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_daily_sales_have_P2_overlay"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_loss_months_": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.loss_months_": {
+			          "Target": {
+			            "Entity": "measure_table.loss_months_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.loss_months_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_loss_months_"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_P1_overlay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.P1_overlay": {
+			          "Target": {
+			            "Entity": "measure_table.P1_overlay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P1_overlay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_P1_overlay"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_P1_subtitle": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.P1_subtitle": {
+			          "Target": {
+			            "Entity": "measure_table.P1_subtitle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P1_subtitle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_P1_subtitle"
 			        }
 			      ]
 			    },
@@ -26200,105 +26866,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_dim_products_are_is_loyalty_eligible_dim_products"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_day": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_week.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_week.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_week.day": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_week.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_week.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_week.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_week_date_hierarchy_have_start_of_week_day"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day"
-			          }
-			        },
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_have_start_of_day_date_hierarchy"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_year": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.year": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_year"
 			        }
 			      ]
 			    },

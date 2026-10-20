@@ -448,6 +448,13 @@ table 'Measure Table'
 			FORMAT([Peak-to-Dead Ratio], "0.00") & "x dead-hour volume."
 		lineageTag: 75f00826-49e7-4177-a9d4-de3fbd3e6145
 
+	measure 'P3 Overlay' =
+			
+			[Stores Needing Action] & " stores exceed network benchmarks on margin gap, staffing and rent at once. " &
+			"Staffing is " & FORMAT([Staffing % Rev], "0.00%") & " of revenue and rent is " & FORMAT([Rent % Rev], "0.00%") &
+			"; loyalty redemptions cost only " & FORMAT([Loyalty Cost % Rev], "0.00%") & "."
+		lineageTag: bb0661b4-20a9-42dd-ba13-10dedec86b5a
+
 	partition 'Measure Table' = m
 		mode: import
 		source =

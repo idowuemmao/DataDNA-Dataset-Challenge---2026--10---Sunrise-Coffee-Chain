@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "45adb99398e198ce53fc",
   "position": {
-    "x": 20.53475935828877,
-    "y": 261.81818181818181,
+    "x": 20,
+    "y": 262,
     "z": 1000,
-    "height": 422.67379679144386,
-    "width": 1413.475935828877,
+    "height": 422,
+    "width": 1408,
     "tabOrder": 1000
   },
   "visual": {
@@ -299,6 +299,90 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_store"
+                          }
+                        },
+                        "Property": "store_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Refurbishing'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_store"
+                          }
+                        },
+                        "Property": "store_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Temporarily-Closed'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "ribbonBands": [
@@ -374,7 +458,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Is productivity steady across weekdays, weekends and bank holidays?'"
+                  "Value": "'Does any store status earn consistently more per staff hour?'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monthly revenue per staff hour with ribbons ranked by store status.'"
                 }
               }
             }

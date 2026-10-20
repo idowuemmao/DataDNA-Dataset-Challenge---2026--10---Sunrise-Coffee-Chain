@@ -99,6 +99,13 @@
                   "Value": "16D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Page Navigation'"
+                }
+              }
             }
           },
           "selector": {
