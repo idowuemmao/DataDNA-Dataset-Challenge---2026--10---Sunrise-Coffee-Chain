@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "340bbd577ce3faea9f55",
   "position": {
-    "x": 1510.3607060629317,
-    "y": 75.149654643131242,
+    "x": 1548.6631016042782,
+    "y": 75.294117647058826,
     "z": 6000,
-    "height": 86.937835763622417,
-    "width": 319.75441289332315,
+    "height": 87.27272727272728,
+    "width": 280.64171122994651,
     "tabOrder": 6000
   },
   "visual": {
@@ -97,6 +97,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Information Overlay, Reset Button and Filter Pane'"
                 }
               }
             }

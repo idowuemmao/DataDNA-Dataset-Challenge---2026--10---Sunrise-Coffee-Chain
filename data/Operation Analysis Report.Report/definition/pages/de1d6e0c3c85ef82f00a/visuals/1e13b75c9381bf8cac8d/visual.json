@@ -118,8 +118,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Revenue growth is masking stores where fixed costs and redemptions erode the margin.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "P1 subtitle"
                 }
               }
             },

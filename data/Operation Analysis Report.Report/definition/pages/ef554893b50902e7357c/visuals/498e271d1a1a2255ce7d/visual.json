@@ -225,7 +225,27 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SHOW'"
+                  "Value": "'Does revenue per staff hour change with the day or the shift?'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'A flat map means labour is scheduled without regard to demand.'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e8d75ad0de5a4c21bc0c",
   "position": {
-    "x": 478.894858019954,
-    "y": 250.49884881043747,
+    "x": 479.144385026738,
+    "y": 249.83957219251337,
     "z": 1000,
-    "height": 201.87260168841138,
-    "width": 403.74520337682276,
+    "height": 266.951871657754,
+    "width": 496.2566844919786,
     "tabOrder": 1000
   },
   "visual": {
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "16D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: the monthly trend in revenue and profitability. How to read it: if the margin line stays flat while the columns move, volume changes aren’t changing profit. Basis: monthly profit table, 24 months. Caution: a single year cannot support year-on-year comparisons.'"
                 }
               }
             }

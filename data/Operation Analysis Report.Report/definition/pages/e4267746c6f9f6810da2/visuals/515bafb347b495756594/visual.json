@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "515bafb347b495756594",
   "position": {
-    "x": 138.7405541561713,
-    "y": 12.241813602015114,
+    "x": 138.60962566844921,
+    "y": 11.978609625668451,
     "z": 6000,
-    "height": 89.77329974811083,
-    "width": 765.7934508816121,
+    "height": 90.695187165775408,
+    "width": 593.79679144385034,
     "tabOrder": 6000
   },
   "visual": {
@@ -80,7 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Structural Cost, Loyalty and Action Plan'"
+                  "Value": "'Profit Leakage'"
                 }
               }
             },
@@ -118,8 +118,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Rent bands and loyalty redemptions create structural margin pressure that volume cannot fix.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "P1 subtitle"
                 }
               }
             },

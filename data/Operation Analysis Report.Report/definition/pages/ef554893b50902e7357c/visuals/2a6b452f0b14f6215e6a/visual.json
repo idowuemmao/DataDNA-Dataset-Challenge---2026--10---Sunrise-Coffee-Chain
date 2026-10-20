@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_product"
+                      "Entity": "dim_store"
                     }
                   },
-                  "Property": "product_category"
+                  "Property": "opening_year"
                 }
               },
-              "queryRef": "dim_product.product_category",
-              "nativeQueryRef": "product_category",
+              "queryRef": "dim_store.opening_year",
+              "nativeQueryRef": "opening_year",
               "active": true
             }
           ]
@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Product Category'"
+                  "Value": "'Store Opening Year'"
                 }
               }
             }

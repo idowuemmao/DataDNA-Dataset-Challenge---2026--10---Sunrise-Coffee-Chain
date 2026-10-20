@@ -23,11 +23,11 @@
                       "Entity": "dim_store"
                     }
                   },
-                  "Property": "location_type"
+                  "Property": "store_format"
                 }
               },
-              "queryRef": "dim_store.location_type",
-              "nativeQueryRef": "location_type",
+              "queryRef": "dim_store.store_format",
+              "nativeQueryRef": "store_format",
               "active": true
             }
           ]
@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Location Type'"
+                  "Value": "'Store Format'"
                 }
               }
             }

@@ -18354,12 +18354,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "loyalty cost": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "ref loyalty price": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -18410,53 +18404,53 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "loyalty price": {
+			          "ref loyalty expenditure": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.482
 			          }
 			        },
 			        {
-			          "loyalty charge": {
+			          "price": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "loyalty rate": {
+			          "charge": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "loyalty fee": {
+			          "fee": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.476
 			          }
 			        },
 			        {
-			          "loyalty total": {
+			          "ref loyalty budget": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.468
 			          }
 			        }
 			      ]
@@ -18868,339 +18862,409 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure_table.loyaltymargin_r": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Loyalty-Margin r"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loyalty-margin r": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "loyalty margin r": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "r": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "margin r": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.primary_cost_driver": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Primary Cost Driver"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "primary cost driver": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "driver": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cost driver": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "primary cost motorist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "cost motorist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "primary cost chauffeur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "motorist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "cost chauffeur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "primary cost teamster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "primary cost carter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "primary cost charioteer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "primary cost handler": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "primary cost trainer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.loyalty_cost": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Loyalty Cost"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loyalty cost": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cost": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "loyalty price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loyalty charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loyalty rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loyalty fee": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loyalty total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fee": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "loyalty expenditure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "expenditure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.store_filtered": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Store Filtered"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "store filtered": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "accumulation filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "collection filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "stock filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "supply filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "stockpile filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "hoard filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "mass filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "pile filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "storehouse filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "storeroom filtered": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "dim_date_date_hierarchy_has_start_of_week": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy"
-			          }
-			        },
-			        "dim_date.date_hierarchy.start_of_week": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy.start_of_week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.date_hierarchy.start_of_week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_start_of_week"
-			        }
-			      ]
-			    },
-			    "dim_date_date_hierarchy_has_start_of_month": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy"
-			          }
-			        },
-			        "dim_date.date_hierarchy.start_of_month": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy.start_of_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.date_hierarchy.start_of_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_start_of_month"
-			        }
-			      ]
-			    },
-			    "dim_date_date_hierarchy_has_start_of_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy"
-			          }
-			        },
-			        "dim_date.date_hierarchy.start_of_quarter": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy.start_of_quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.date_hierarchy.start_of_quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_start_of_quarter"
-			        }
-			      ]
-			    },
-			    "dim_date_date_hierarchy_has_start_of_year": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy"
-			          }
-			        },
-			        "dim_date.date_hierarchy.start_of_year": {
-			          "Target": {
-			            "Entity": "dim_date.date_hierarchy.start_of_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.date_hierarchy.start_of_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "date_hierarchies_have_start_of_year"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_day": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.day": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_day"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_month": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.month": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_month"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.quarter": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_quarter"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_year": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.year": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_year"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day"
-			          }
-			        },
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_have_start_of_day_date_hierarchy"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_day": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_week.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_week.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_week.day": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_week.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_week.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_week.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_week_date_hierarchy_have_start_of_week_day"
-			        }
-			      ]
-			    },
 			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_month": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
@@ -20553,6 +20617,198 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "dim_store_has_measure_table_store_filtered": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.store_filtered": {
+			          "Target": {
+			            "Entity": "measure_table.store_filtered"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.store_filtered"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_store_filtered"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_loyalty_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.loyalty_cost": {
+			          "Target": {
+			            "Entity": "measure_table.loyalty_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.loyalty_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_loyalty_cost"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "measure_table.loyalty_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "loyalty_cost_indicates_how_expensive_fact_store_monthly_profitability_are"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_primary_cost_driver": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.primary_cost_driver": {
+			          "Target": {
+			            "Entity": "measure_table.primary_cost_driver"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.primary_cost_driver"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_primary_cost_driver"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "measure_table.primary_cost_driver"
+			            },
+			            "Verbs": [
+			              {
+			                "drive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "fact_store_monthly_profitability"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "primary_cost_driver_drive_fact_store_monthly_profitability"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table.primary_cost_driver"
+			            },
+			            "Object": {
+			              "Role": "fact_store_monthly_profitability"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "primary_cost_driver_have_fact_store_monthly_profitability"
+			        }
+			      ]
+			    },
+			    "measure_table_has_loyaltymargin_r": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure_table": {
+			          "Target": {
+			            "Entity": "measure_table"
+			          }
+			        },
+			        "measure_table.loyaltymargin_r": {
+			          "Target": {
+			            "Entity": "measure_table.loyaltymargin_r"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table"
+			            },
+			            "Object": {
+			              "Role": "measure_table.loyaltymargin_r"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measure_tables_have_loyaltymargin_r"
+			        }
+			      ]
+			    },
 			    "fact_store_monthly_profitability_has_measure_table_ref_flagged_gap": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_store_monthly_profitability"
@@ -20685,15 +20941,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_daily_sale_has_measure_table_ref_gross_margin": {
+			    "fact_store_monthly_profitability_has_measure_table_ref_gross_margin": {
 			      "Binding": {
-			        "ConceptualEntity": "fact_daily_sales"
+			        "ConceptualEntity": "fact_store_monthly_profitability"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_daily_sale": {
+			        "fact_store_monthly_profitability": {
 			          "Target": {
-			            "Entity": "fact_daily_sale"
+			            "Entity": "fact_store_monthly_profitability"
 			          }
 			        },
 			        "measure_table.ref_gross_margin": {
@@ -20706,7 +20962,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_daily_sale"
+			              "Role": "fact_store_monthly_profitability"
 			            },
 			            "Object": {
 			              "Role": "measure_table.ref_gross_margin"
@@ -20714,7 +20970,40 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_daily_sales_have_ref_gross_margin"
+			          "ID": "fact_store_monthly_profitability_have_ref_gross_margin"
+			        }
+			      ]
+			    },
+			    "dim_store_has_measure_table_ref_gross_margin": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.ref_gross_margin": {
+			          "Target": {
+			            "Entity": "measure_table.ref_gross_margin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.ref_gross_margin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_ref_gross_margin"
 			        }
 			      ]
 			    },
@@ -20751,6 +21040,39 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "dim_store_has_measure_table_ref_rent_": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.ref_rent_": {
+			          "Target": {
+			            "Entity": "measure_table.ref_rent_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.ref_rent_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_ref_rent_"
+			        }
+			      ]
+			    },
 			    "fact_store_monthly_profitability_has_measure_table_ref_loyalty_cost": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_store_monthly_profitability"
@@ -20784,6 +21106,39 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "dim_store_has_measure_table_ref_loyalty_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.ref_loyalty_cost": {
+			          "Target": {
+			            "Entity": "measure_table.ref_loyalty_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.ref_loyalty_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_ref_loyalty_cost"
+			        }
+			      ]
+			    },
 			    "fact_store_monthly_profitability_has_measure_table_ref_loyalty_revenue": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_store_monthly_profitability"
@@ -20814,6 +21169,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_store_monthly_profitability_have_ref_loyalty_revenue"
+			        }
+			      ]
+			    },
+			    "dim_store_has_measure_table_ref_loyalty_revenue": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.ref_loyalty_revenue": {
+			          "Target": {
+			            "Entity": "measure_table.ref_loyalty_revenue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.ref_loyalty_revenue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_ref_loyalty_revenue"
 			        }
 			      ]
 			    },
@@ -21675,15 +22063,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_store_monthly_profitability_has_measure_table_P3_insight": {
+			    "measure_table_has_P3_insight": {
 			      "Binding": {
-			        "ConceptualEntity": "fact_store_monthly_profitability"
+			        "ConceptualEntity": "Measure Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_store_monthly_profitability": {
+			        "measure_table": {
 			          "Target": {
-			            "Entity": "fact_store_monthly_profitability"
+			            "Entity": "measure_table"
 			          }
 			        },
 			        "measure_table.P3_insight": {
@@ -21696,7 +22084,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_store_monthly_profitability"
+			              "Role": "measure_table"
 			            },
 			            "Object": {
 			              "Role": "measure_table.P3_insight"
@@ -21704,40 +22092,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_store_monthly_profitability_have_P3_insight"
-			        }
-			      ]
-			    },
-			    "dim_store_has_measure_table_P3_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_store"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_store": {
-			          "Target": {
-			            "Entity": "dim_store"
-			          }
-			        },
-			        "measure_table.P3_insight": {
-			          "Target": {
-			            "Entity": "measure_table.P3_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_store"
-			            },
-			            "Object": {
-			              "Role": "measure_table.P3_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_stores_have_P3_insight"
+			          "ID": "measure_tables_have_P3_insight"
 			        }
 			      ]
 			    },
@@ -21807,15 +22162,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_daily_sale_has_measure_table_gross_margin_": {
+			    "fact_store_monthly_profitability_has_measure_table_gross_margin_": {
 			      "Binding": {
-			        "ConceptualEntity": "fact_daily_sales"
+			        "ConceptualEntity": "fact_store_monthly_profitability"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_daily_sale": {
+			        "fact_store_monthly_profitability": {
 			          "Target": {
-			            "Entity": "fact_daily_sale"
+			            "Entity": "fact_store_monthly_profitability"
 			          }
 			        },
 			        "measure_table.gross_margin_": {
@@ -21828,7 +22183,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_daily_sale"
+			              "Role": "fact_store_monthly_profitability"
 			            },
 			            "Object": {
 			              "Role": "measure_table.gross_margin_"
@@ -21836,7 +22191,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_daily_sales_have_gross_margin_"
+			          "ID": "fact_store_monthly_profitability_have_gross_margin_"
 			        }
 			      ]
 			    },
@@ -25688,6 +26043,61 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "dim_store_is_store_filtered": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.store_filtered": {
+			          "Target": {
+			            "Entity": "measure_table.store_filtered"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "measure_table.store_filtered"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Adjectives": [
+			              {
+			                "store filtered": {
+			                  "State": "Generated"
+			                }
+			              },
+			              {
+			                "store-filtered": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_dim_stores_are_store_filtered_dim_stores"
+			        }
+			      ]
+			    },
 			    "dim_date_is_weekend": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
@@ -25790,6 +26200,336 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_dim_products_are_is_loyalty_eligible_dim_products"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_week_date_hierarchy_has_dim_date_start_of_week_day": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_week.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_week.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_week.day": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_week.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_week.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_week.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_week_date_hierarchy_have_start_of_week_day"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day"
+			          }
+			        },
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_have_start_of_day_date_hierarchy"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.year": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_year"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_quarter"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.month": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_month"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_day": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.day": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_day"
+			        }
+			      ]
+			    },
+			    "dim_date_date_hierarchy_has_start_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date_hierarchy.start_of_year": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy.start_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_hierarchy.start_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_start_of_year"
+			        }
+			      ]
+			    },
+			    "dim_date_date_hierarchy_has_start_of_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date_hierarchy.start_of_quarter": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy.start_of_quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_hierarchy.start_of_quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_start_of_quarter"
+			        }
+			      ]
+			    },
+			    "dim_date_date_hierarchy_has_start_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date_hierarchy.start_of_month": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy.start_of_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_hierarchy.start_of_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_start_of_month"
+			        }
+			      ]
+			    },
+			    "dim_date_date_hierarchy_has_start_of_week": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy"
+			          }
+			        },
+			        "dim_date.date_hierarchy.start_of_week": {
+			          "Target": {
+			            "Entity": "dim_date.date_hierarchy.start_of_week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_hierarchy.start_of_week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_hierarchies_have_start_of_week"
 			        }
 			      ]
 			    },

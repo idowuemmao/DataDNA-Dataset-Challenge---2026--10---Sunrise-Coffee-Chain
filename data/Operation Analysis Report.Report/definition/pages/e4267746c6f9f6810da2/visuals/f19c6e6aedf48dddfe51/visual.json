@@ -238,6 +238,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NA'"
+                }
+              }
             }
           },
           "selector": {

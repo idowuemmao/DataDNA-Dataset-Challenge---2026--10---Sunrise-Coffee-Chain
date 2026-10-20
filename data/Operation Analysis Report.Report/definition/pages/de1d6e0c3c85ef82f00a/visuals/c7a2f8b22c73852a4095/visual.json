@@ -99,6 +99,13 @@
                   "Value": "16D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What it shows: the full P&L bridge for the current selection. How to read it: each red bar is a cost; the final “Total” bar is net profit. Basis: monthly profit table. Net profit reconciles exactly to revenue minus the four costs, so there is no unexplained gap.'"
+                }
+              }
             }
           },
           "selector": {

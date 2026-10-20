@@ -23,11 +23,11 @@
                       "Entity": "dim_store"
                     }
                   },
-                  "Property": "city"
+                  "Property": "opening_year"
                 }
               },
-              "queryRef": "dim_store.city",
-              "nativeQueryRef": "city",
+              "queryRef": "dim_store.opening_year",
+              "nativeQueryRef": "opening_year",
               "active": true
             }
           ]
@@ -70,7 +70,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'City'"
+                  "Value": "'Store Opening Year'"
                 }
               }
             }

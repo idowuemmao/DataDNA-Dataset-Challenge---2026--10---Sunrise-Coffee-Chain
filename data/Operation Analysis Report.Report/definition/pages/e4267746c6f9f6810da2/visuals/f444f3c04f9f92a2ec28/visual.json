@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f444f3c04f9f92a2ec28",
   "position": {
-    "x": 735.86901763224182,
-    "y": 261.15869017632241,
+    "x": 1201.0579345088161,
+    "y": 696.42317380352642,
     "z": 4000,
-    "height": 423.02267002518892,
-    "width": 852.846347607053,
+    "height": 369.97481108312343,
+    "width": 705.94458438287154,
     "tabOrder": 4000
   },
   "visual": {
@@ -60,11 +60,11 @@
                       "Entity": "Measure Table"
                     }
                   },
-                  "Property": "Loyalty Cost % Rev"
+                  "Property": "Loyalty Cost"
                 }
               },
-              "queryRef": "Measure Table.Loyalty Cost % Rev",
-              "nativeQueryRef": "Loyalty Cost % Rev"
+              "queryRef": "Measure Table.Loyalty Cost",
+              "nativeQueryRef": "Loyalty Cost"
             }
           ]
         },

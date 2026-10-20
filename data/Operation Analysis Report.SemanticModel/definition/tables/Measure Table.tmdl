@@ -153,7 +153,7 @@ table 'Measure Table'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 10a106b0-5324-444e-984b-2433ffa17ec3
 
-	measure 'Gross Margin %' = DIVIDE([Gross Profit], SUM(fact_daily_sales[total_revenue_gbp]))
+	measure 'Gross Margin %' = DIVIDE([Revenue] - [COGS], [Revenue])
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6962c85c-1446-472d-ad8a-41647f552aa4
 
@@ -162,14 +162,13 @@ table 'Measure Table'
 			VAR a = IF([Net Margin %] < [Network Margin %], 1, 0)
 			VAR b = IF([Staffing % Rev] > CALCULATE([Staffing % Rev], ALL(dim_store)), 1, 0)
 			VAR c = IF([Rent % Rev] > CALCULATE([Rent % Rev], ALL(dim_store)), 1, 0)
-			VAR d = IF([Loyalty Cost % Rev] > CALCULATE([Loyalty Cost % Rev], ALL(dim_store)), 1, 0)
-			RETURN a + b + c + d
+			RETURN a + b + c
 		formatString: 0
 		lineageTag: d85103e8-8e03-45b9-b0e9-66b93307ba5e
 
 	measure 'Priority Action' =
 			
-			SWITCH([Store Risk Score], 4, "Restructure", 3, "Renegotiate / re-staff", 2, "Monitor", "Maintain")
+			SWITCH([Store Risk Score], 3, "Restructure", 2, "Monitor", "Maintain")
 		lineageTag: da255e1d-043d-425e-a68e-c325857d8ad0
 
 	measure 'Stores Needing Action' = COUNTROWS(FILTER(VALUES(dim_store[store_id]), [Store Risk Score] >= 3))
@@ -178,10 +177,13 @@ table 'Measure Table'
 
 	measure 'P3 Insight' =
 			
-			[Stores Needing Action] & " stores score 3+ on structural risk (margin, staffing, rent, loyalty cost). " &
-			"Loyalty members contribute " & FORMAT([Loyalty Revenue %], "0%") & " of spend at a redemption cost of " &
-			FORMAT([Loyalty Cost % Rev], "0.0%") & " of revenue. " &
-			"Action: prioritise rent renegotiation and redemption-rule changes in the flagged stores."
+			VAR r = [Loyalty-Margin r]
+			VAR rTxt = IF(ABS(r) < 0.3, "no meaningful link", IF(r > 0, "a positive link", "a negative link"))
+			RETURN
+			[Stores Needing Action] & " stores exceed the network on staffing cost, rent and margin gap at once. " &
+			"Staffing takes " & FORMAT([Staffing % Rev], "0.0%") & " of revenue and rent " & FORMAT([Rent % Rev], "0.0%") & ". " &
+			"Loyalty share of spend shows " & rTxt & " with margin (r = " & FORMAT(r, "0.00") & "). " &
+			"Action: work through the 'Restructure' stores in the table, starting with the cost marked as their primary driver."
 		lineageTag: 8b7ef86d-0d45-427d-a9ad-b19a8baa0c2d
 
 	measure 'Rev & Profit label' = FORMAT([Revenue]/1000000, "£#0.00M") & "  | " & FORMAT([Net Margin %], "0.00%")
@@ -335,34 +337,37 @@ table 'Measure Table'
 
 	measure 'Ref Loyalty Revenue' =
 			
-			VAR net = CALCULATE([Loyalty Revenue %], ALL(dim_store))
-			RETURN "Members drive " & FORMAT([Loyalty Revenue %], "0.00%") & " of spend (network " & FORMAT(net, "0.00%") & ")"
+			VAR bench = IF([Store Filtered], CALCULATE([Loyalty Revenue %], ALL(dim_store)),
+			                                 MEDIANX(ALL(dim_store[store_id]), [Loyalty Revenue %]))
+			VAR lbl = IF([Store Filtered], "network", "median store")
+			RETURN "Members drive " & FORMAT([Loyalty Revenue %], "0.00%") & " of spend (" & lbl & " " & FORMAT(bench, "0.00%") & ")"
 		lineageTag: 64c34504-ef92-41b7-a48f-145d548c2771
 
 	measure 'Ref Loyalty Cost' =
 			
-			VAR net = CALCULATE([Loyalty Cost % Rev], ALL(dim_store))
-			VAR gap = [Loyalty Cost % Rev] - net
-			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") &
-			    " network (" & FORMAT(net, "0.00%") & ") redemption cost"
+			VAR bench = IF([Store Filtered], CALCULATE([Loyalty Cost % Rev], ALL(dim_store)),
+			                                 MEDIANX(ALL(dim_store[store_id]), [Loyalty Cost % Rev]))
+			VAR lbl = IF([Store Filtered], "network", "median store")
+			VAR gap = [Loyalty Cost % Rev] - bench
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") & " " & lbl & " (" & FORMAT(bench, "0.00%") & ")"
 		lineageTag: 71ac9b0d-5329-42cf-9b30-86bee79324bf
 
-	measure 'Ref Rent %' = ```
+	measure 'Ref Rent %' =
 			
-			VAR net = CALCULATE([Rent % Rev], ALL(dim_store))
-			VAR gap = [Rent % Rev] - net
-			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, "above", " below") &
-			    " network rent burden of " & FORMAT(net, "0.00%")
-			
-			```
+			VAR bench = IF([Store Filtered], CALCULATE([Rent % Rev], ALL(dim_store)),
+			                                 MEDIANX(ALL(dim_store[store_id]), [Rent % Rev]))
+			VAR lbl = IF([Store Filtered], "network", "median store")
+			VAR gap = [Rent % Rev] - bench
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap > 0, " above", " below") & " " & lbl & " (" & FORMAT(bench, "0.00%") & ")"
 		lineageTag: 7db4e635-8af1-4c2c-b5ae-5c5dab2a217c
 
 	measure 'Ref Gross Margin' =
 			
-			VAR net = CALCULATE([Gross Margin %], ALL(dim_store))
-			VAR gap = [Gross Margin %] - net
-			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap >= 0, " above", " below") &
-			    " network gross margin of " & FORMAT(net, "0.00%")
+			VAR bench = IF([Store Filtered], CALCULATE([Gross Margin %], ALL(dim_store)),
+			                                 MEDIANX(ALL(dim_store[store_id]), [Gross Margin %]))
+			VAR lbl = IF([Store Filtered], "network", "median store")
+			VAR gap = [Gross Margin %] - bench
+			RETURN FORMAT(ABS(gap), "0.00%") & IF(gap >= 0, " above", " below") & " " & lbl & " (" & FORMAT(bench, "0.00%") & ")"
 		lineageTag: d9b0e565-225e-4c57-9af3-9f8f887609d7
 
 	measure 'Ref Stores Action' =
@@ -379,6 +384,69 @@ table 'Measure Table'
 			    "Flagged stores run " & FORMAT(ABS(g), "0.00%") &
 			    IF(g < 0, " below", " above") & " network margin")
 		lineageTag: 1aaabcd7-1512-4689-9c5e-309f3d53624c
+
+	measure 'Loyalty-Margin r' =
+			
+			VAR t =
+			    ADDCOLUMNS(
+			        FILTER(VALUES(dim_store[store_id]), [Revenue] > 0),
+			        "xv", [Loyalty Revenue %],
+			        "yv", [Net Margin %]
+			    )
+			VAR n   = COUNTROWS(t)
+			VAR sx  = SUMX(t, [xv])
+			VAR sy  = SUMX(t, [yv])
+			VAR sxy = SUMX(t, [xv] * [yv])
+			VAR sxx = SUMX(t, [xv] ^ 2)
+			VAR syy = SUMX(t, [yv] ^ 2)
+			RETURN DIVIDE(n * sxy - sx * sy, SQRT((n * sxx - sx ^ 2) * (n * syy - sy ^ 2)))
+		lineageTag: b0cad0ea-3db2-4da1-af71-3316ad4a1d5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Primary Cost Driver' =
+			
+			VAR sGap = [Staffing % Rev] - CALCULATE([Staffing % Rev], ALL(dim_store))
+			VAR rGap = [Rent % Rev] - CALCULATE([Rent % Rev], ALL(dim_store))
+			RETURN IF([Store Risk Score] < 2, "-", IF(sGap >= rGap, "Staffing", "Rent"))
+		lineageTag: 026e9aa6-d7d2-4d0a-b776-de7fbcec9e12
+
+	measure 'Loyalty Cost' = SUM(fact_store_monthly_profitability[loyalty_redemption_cost_gbp])
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: fbb7c915-ade8-438a-9b6d-263fb25c42fe
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure 'Store Filtered' = ISFILTERED(dim_store)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 19172ec8-92ff-4bfe-bb9e-b80a5f876a51
+
+	measure 'P1 subtitle' = "Where profit leaks: fixed costs take " & FORMAT([Fixed Cost % Rev], "0.00%") & " of every £1"
+		lineageTag: 4171d0f5-9baa-4cb8-81cb-02552a868eda
+
+	measure 'P1 Overlay' =
+			
+			FORMAT([Revenue] / 1000000, "£0.0") & "M revenue converts to a " & FORMAT([Net Margin %], "0.0%") &
+			" net margin. Rent and staffing absorb " & FORMAT([Fixed Cost % Rev], "0.0%") &
+			" of revenue, and " & FORMAT([Loss Months %], "0.0%") & " of store-months make a loss."
+		lineageTag: a1a6ff9f-5953-4c31-b48a-2ace84367cf1
+
+	measure 'Loss Months %' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS(fact_store_monthly_profitability), fact_store_monthly_profitability[net_profit_gbp] < 0),
+			    COUNTROWS(fact_store_monthly_profitability)
+			)
+		lineageTag: 08c00500-94c8-4e69-b5bc-e7a9b5ec74db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P2 Overlay' =
+			
+			"Staffing takes " & FORMAT([Staffing % Rev], "0.00%") & " of revenue. Revenue per staff hour is " &
+			FORMAT([Revenue per Staff Hour], "£0.00") & " (sample basis), and peak hours carry " &
+			FORMAT([Peak-to-Dead Ratio], "0.00") & "x dead-hour volume."
+		lineageTag: 75f00826-49e7-4177-a9d4-de3fbd3e6145
 
 	partition 'Measure Table' = m
 		mode: import

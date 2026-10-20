@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "0ea0a9a535c6a439686a",
   "position": {
-    "x": 588.96725440806051,
-    "y": 696.42317380352642,
+    "x": 20.53475935828877,
+    "y": 696.47058823529414,
     "z": 2000,
-    "height": 369.97481108312343,
-    "width": 1318.0352644836273,
+    "height": 369.62566844919786,
+    "width": 1168.7700534759358,
     "tabOrder": 2000
   },
   "visual": {
@@ -38,25 +38,12 @@
                       "Entity": "dim_store"
                     }
                   },
-                  "Property": "city"
+                  "Property": "region"
                 }
               },
-              "queryRef": "dim_store.city",
-              "nativeQueryRef": "city"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_store"
-                    }
-                  },
-                  "Property": "store_status"
-                }
-              },
-              "queryRef": "dim_store.store_status",
-              "nativeQueryRef": "store_status"
+              "queryRef": "dim_store.region",
+              "nativeQueryRef": "Region",
+              "displayName": "Region"
             },
             {
               "field": {
@@ -72,6 +59,20 @@
               "queryRef": "Measure Table.Store Risk Score",
               "nativeQueryRef": "Risk Score",
               "displayName": "Risk Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure Table"
+                    }
+                  },
+                  "Property": "Rent % Rev"
+                }
+              },
+              "queryRef": "Measure Table.Rent % Rev",
+              "nativeQueryRef": "Rent % Rev"
             },
             {
               "field": {
@@ -110,31 +111,31 @@
                       "Entity": "Measure Table"
                     }
                   },
-                  "Property": "Rent % Rev"
+                  "Property": "Primary Cost Driver"
                 }
               },
-              "queryRef": "Measure Table.Rent % Rev",
-              "nativeQueryRef": "Rent % Rev"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Measure Table"
-                    }
-                  },
-                  "Property": "Staffing % Rev"
-                }
-              },
-              "queryRef": "Measure Table.Staffing % Rev",
-              "nativeQueryRef": "Staffing % Rev"
+              "queryRef": "Measure Table.Primary Cost Driver",
+              "nativeQueryRef": "Primary Cost Driver"
             }
           ]
         }
       },
       "sortDefinition": {
-        "isDefaultSort": true
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Measure Table"
+                  }
+                },
+                "Property": "Store Risk Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -215,7 +216,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'maxColor'"
+                        "Value": "'#37A794'"
                       }
                     }
                   }
@@ -316,7 +317,7 @@
             }
           },
           "selector": {
-            "metadata": "Measure Table.Staffing % Rev"
+            "metadata": "Measure Table.Primary Cost Driver"
           }
         }
       ],
@@ -329,7 +330,30 @@
                   "Value": "'Center'"
                 }
               }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fitToContent'"
+                }
+              }
             }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "176.75400952760594D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_store.region"
           }
         }
       ]
