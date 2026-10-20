@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'images.jpg'"
+                      "Value": "'Sunrise_Coffee_Chain_Logo-removebg-preview.png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "images04195779032163627.jpg"
+                      "ItemName": "Sunrise_Coffee_Chain_Logo-remo9911997668621072.png"
                     }
                   }
                 },
@@ -39,6 +39,13 @@
                       "Value": "'Normal'"
                     }
                   }
+                }
+              }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fill'"
                 }
               }
             }

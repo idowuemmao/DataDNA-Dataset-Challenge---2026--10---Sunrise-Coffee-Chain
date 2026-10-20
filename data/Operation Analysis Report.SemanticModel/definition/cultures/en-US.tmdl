@@ -19664,9 +19664,197 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure_table.P3_overlay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "P3 Overlay"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "P3 overlay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "overlay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "p3 intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "p3 connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "intersection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "p3 overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p3 edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "p3 join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "overlap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "edge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.month": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_month"
+			        }
+			      ]
+			    },
+			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date.start_of_day.date_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.date_hierarchy"
+			          }
+			        },
+			        "dim_date.start_of_day.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.start_of_day.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date.start_of_day.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_date.start_of_day.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "start_of_day_date_hierarchy_have_start_of_day_quarter"
+			        }
+			      ]
+			    },
 			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_year": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
@@ -21115,6 +21303,105 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_stores_have_fact_store_monthly_profitability"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_primary_cost_driver_badge": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.primary_cost_driver_badge": {
+			          "Target": {
+			            "Entity": "measure_table.primary_cost_driver_badge"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.primary_cost_driver_badge"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_primary_cost_driver_badge"
+			        }
+			      ]
+			    },
+			    "fact_store_monthly_profitability_has_measure_table_P3_overlay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_store_monthly_profitability"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_store_monthly_profitability": {
+			          "Target": {
+			            "Entity": "fact_store_monthly_profitability"
+			          }
+			        },
+			        "measure_table.P3_overlay": {
+			          "Target": {
+			            "Entity": "measure_table.P3_overlay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_store_monthly_profitability"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P3_overlay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_store_monthly_profitability_have_P3_overlay"
+			        }
+			      ]
+			    },
+			    "dim_store_has_measure_table_P3_overlay": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_store"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_store": {
+			          "Target": {
+			            "Entity": "dim_store"
+			          }
+			        },
+			        "measure_table.P3_overlay": {
+			          "Target": {
+			            "Entity": "measure_table.P3_overlay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_store"
+			            },
+			            "Object": {
+			              "Role": "measure_table.P3_overlay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_stores_have_P3_overlay"
 			        }
 			      ]
 			    },
@@ -26866,72 +27153,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_dim_products_are_is_loyalty_eligible_dim_products"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.quarter": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_quarter"
-			        }
-			      ]
-			    },
-			    "dim_date_start_of_day_date_hierarchy_has_dim_date_start_of_day_month": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date.start_of_day.date_hierarchy": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.date_hierarchy"
-			          }
-			        },
-			        "dim_date.start_of_day.month": {
-			          "Target": {
-			            "Entity": "dim_date.start_of_day.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date.start_of_day.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "dim_date.start_of_day.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "start_of_day_date_hierarchy_have_start_of_day_month"
 			        }
 			      ]
 			    },

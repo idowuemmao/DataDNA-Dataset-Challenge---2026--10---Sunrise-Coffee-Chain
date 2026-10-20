@@ -65,18 +65,58 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "close_1632600038645520732653704.png",
+          "path": "close_1632600038645520732653704.png",
+          "type": "Image"
+        },
+        {
+          "name": "close_16326007929919323198479.png",
+          "path": "close_16326007929919323198479.png",
+          "type": "Image"
+        },
+        {
+          "name": "close_16326008388451484537498.png",
+          "path": "close_16326008388451484537498.png",
+          "type": "Image"
+        },
+        {
+          "name": "equalizer_111224048481112601975005.png",
+          "path": "equalizer_111224048481112601975005.png",
+          "type": "Image"
+        },
+        {
+          "name": "equalizer_11122404872315071234555.png",
+          "path": "equalizer_11122404872315071234555.png",
+          "type": "Image"
+        },
+        {
+          "name": "equalizer_111224049163683568932518.png",
+          "path": "equalizer_111224049163683568932518.png",
+          "type": "Image"
+        },
+        {
           "name": "Frontier8139846866147864.json",
           "path": "Frontier8139846866147864.json",
           "type": "CustomTheme"
         },
         {
-          "name": "images04195779032163627.jpg",
-          "path": "images04195779032163627.jpg",
+          "name": "reset_989931916467132525700434.png",
+          "path": "reset_989931916467132525700434.png",
           "type": "Image"
         },
         {
-          "name": "reset_989931916467132525700434.png",
-          "path": "reset_989931916467132525700434.png",
+          "name": "Sunrise_Coffee_Chain_Logo-remo670018406597836.png",
+          "path": "Sunrise_Coffee_Chain_Logo-remo670018406597836.png",
+          "type": "Image"
+        },
+        {
+          "name": "Sunrise_Coffee_Chain_Logo-remo757197136295454.png",
+          "path": "Sunrise_Coffee_Chain_Logo-remo757197136295454.png",
+          "type": "Image"
+        },
+        {
+          "name": "Sunrise_Coffee_Chain_Logo-remo9911997668621072.png",
+          "path": "Sunrise_Coffee_Chain_Logo-remo9911997668621072.png",
           "type": "Image"
         }
       ]

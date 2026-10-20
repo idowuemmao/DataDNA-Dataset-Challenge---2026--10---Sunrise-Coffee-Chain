@@ -366,7 +366,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Where does revenue concentrate, from location type down to the individual city?'"
+                  "Value": "'Where does revenue & Net Profit % concentrate, from location type down to city?'"
                 }
               }
             }
@@ -379,7 +379,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by location type; drill down to region, then city. '"
+                  "Value": "'Revenue and Net Margin % by location type; drill down to region, then city. '"
                 }
               }
             }

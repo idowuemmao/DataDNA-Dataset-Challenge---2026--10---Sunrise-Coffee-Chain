@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'reset_9899319.png'"
+                      "Value": "'close_1632600.png'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "reset_989931916467132525700434.png"
+                      "ItemName": "close_16326008388451484537498.png"
                     }
                   }
                 },
