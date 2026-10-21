@@ -1,120 +1,255 @@
-# DataDNA Challenge — Sunrise Coffee Chain
+# Where Does Revenue Stop Becoming Profit?
 
-## 🎯 Your Role
+**A 3-page strategic Power BI report on profitability, staffing and structural cost for a 60-store UK coffee chain.**
 
-You are a senior commercial analyst at Sunrise Coffee Chain, reporting to the Chief Commercial Officer. The business operates 60 stores across the UK, spanning High-Street, Retail-Park, and Transport-Hub formats. You have been asked to produce a comprehensive performance review covering the 2023–2024 trading period, with a focus on store profitability, loyalty programme effectiveness, and revenue mix trends ahead of next year's expansion planning cycle.
+Built for the Onyx Data challenge by Emmanuel Idowu (Senior Data Analyst, Power BI developer).
 
-**Difficulty: Medium**
-
-## 📊 The Scenario
-
-Sunrise Coffee Chain has grown steadily over the past five years but the commercial team suspects that performance is diverging sharply between store formats and regions. The Chief Commercial Officer wants to know which stores and formats are genuinely driving the business forward, whether the loyalty programme is generating measurable incremental spend, and how the revenue mix across espresso drinks, filter coffee, food, and retail beans is shifting over time. Your findings will directly inform which regions get prioritised in the 2025 site selection programme and whether the loyalty scheme warrants further investment.
-
-### Dataset Overview
-
-- **Dimensions**: 3 dimension tables — store (60 rows), product (40 rows), date (730 rows: 2023-01-01 to 2024-12-31)
-- **Facts**: 2 fact tables:
-  - `fact_daily_sales` — 10,000 rows at store x day x top-product grain, capturing daily trading metrics
-  - `fact_store_monthly_profitability` — 1,440 rows (60 stores x 24 months) capturing full P&amp;L, loyalty, and footfall at monthly grain
-- **Start with**: Use `fact_store_monthly_profitability` for profitability and trend analysis; use `fact_daily_sales` for granular day-of-week and product-mix analysis
-- **Currency**: GBP
-
-### Key Business Metrics
-
-- **net\_profit\_gbp** — monthly net profit after all costs (revenue minus COGS minus rent minus staffing minus loyalty redemption)
-- **net\_profit\_margin\_pct** — net profit as a percentage of revenue; the primary profitability KPI
-- **total\_revenue\_gbp / total\_monthly\_revenue\_gbp** — gross revenue before any deductions
-- **loyalty\_adoption\_rate** — fraction of a store's customers using the loyalty app (store-level attribute)
-- **loyalty\_member\_revenue\_pct** — fraction of monthly revenue attributable to loyalty members
-- **loyalty\_redemption\_cost\_gbp** — cost to the business of redeeming loyalty rewards
-- **daily\_gross\_profit\_gbp** — daily revenue minus cost of goods (before fixed costs)
-- **revenue\_per\_sqft\_gbp** — monthly revenue efficiency metric for space utilisation
-
-## 🔍 Analysis Areas
-
-### 1 — Store Format and Regional Performance
-
-Compare how High-Street, Retail-Park, and Transport-Hub formats perform on profitability, revenue per square foot, and footfall. Identify which UK regions have the strongest and weakest net profit margins, and flag any stores that may be candidates for review or closure based on `profitability_status`.
-
-### 2 — Loyalty Programme Effectiveness
-
-Assess whether stores with higher `loyalty_adoption_rate` generate higher `loyalty_member_revenue_pct` and `avg_transaction_value_gbp`. Determine whether loyalty redemption costs are outweighing the incremental revenue loyalty members bring, and whether the programme is more effective in certain formats or regions.
-
-### 3 — Revenue Mix and Product Category Trends
-
-Analyse how the four daily revenue streams — espresso, filter, food, and retail beans — are proportioned across stores, formats, and time. Identify whether the food revenue share is growing, and which product categories from `dim_product` generate the highest gross margin for the business.
-
-### 4 — Temporal and Seasonal Patterns
-
-Examine how trading performance changes across the week, around bank holidays, and seasonally across 2023–2024. Identify the peak trading quarters and assess how different store formats respond to seasonal demand shifts.
-
-## ❓ Guiding Questions
-
-Use these questions to structure your analysis. They are starting points — feel free to explore further.
-
-### Store and Format Performance
-
-- Which store format (High-Street, Retail-Park, Transport-Hub) delivers the highest average `net_profit_margin_pct`?
-- Which UK regions show the highest concentration of `profitability_status` = Loss-Making or Structural-Loss?
-- Do stores with higher `monthly_rent_gbp` necessarily generate higher `total_monthly_revenue_gbp`, or does rent erode profit disproportionately in some formats?
-- Which individual stores improved their `net_profit_gbp` most from 2023 to 2024, and which have deteriorated?
-
-### Loyalty Programme
-
-- Is there a positive correlation between `loyalty_adoption_rate` and `loyalty_member_revenue_pct` at a store level?
-- Do loyalty members spend more per transaction than non-members, based on `avg_transaction_value_gbp` relative to `loyalty_transactions`?
-- What is the net value of the loyalty programme per store: loyalty member revenue contribution minus `loyalty_redemption_cost_gbp`?
-- Does `loyalty_adoption_rate` vary significantly by store format or region?
-
-### Revenue Mix
-
-- What proportion of daily revenue comes from espresso drinks vs food vs filter coffee vs retail beans, and how does this split differ by store format?
-- Which product categories in `dim_product` carry the highest `gross_margin_pct`, and are those products growing as a share of daily revenue?
-- Is `retail_beans_revenue_gbp` growing as a proportion of total revenue — suggesting a stronger at-home coffee consumer base?
-
-### Seasonal and Temporal Patterns
-
-- How does `total_revenue_gbp` differ between weekday and weekend trading across formats?
-- Do bank holidays help or hurt revenue for Transport-Hub stores compared with High-Street stores?
-- Which months in 2023–2024 show the highest and lowest `net_profit_gbp` across the estate, and does the pattern repeat year-on-year?
-
-## 💡 Impact &amp; Purpose
-
-Your analysis should help the Sunrise Coffee commercial team:
-
-- Identify which store formats and regions to prioritise in the 2025 expansion programme
-- Decide whether the loyalty programme is generating a positive return on investment
-- Understand which product categories to grow or deprioritise based on revenue mix and margin
-- Anticipate seasonal trading patterns to optimise staffing and stock ordering
-
-## 📋 Deliverables
-
-Create a professional analytical report that includes:
-
-1. **Executive Summary**
-   - Three to five key findings with clear business implications
-   - A headline recommendation for the Chief Commercial Officer
-2. **Detailed Analysis**
-   - Visualisations showing profitability trends, format comparisons, and revenue mix
-   - Store-level performance breakdown with profitability status
-   - Loyalty programme net value assessment
-3. **Actionable Insights**
-   - Stores or regions recommended for review
-   - Whether the loyalty programme merits further investment
-   - Seasonal trading recommendations for staffing and promotional planning
-
-## 📁 Data Dictionary
-
-See `docs/DATA_DICTIONARY.md` for full column-level documentation of all tables.
-
-## 🚀 Getting Started
-
-1. **Explore the dimensions first**: Review `dim_store` to understand the estate and `dim_product` to understand the product catalogue and margins
-2. **Start with monthly profitability**: Use `fact_store_monthly_profitability` for a top-down view of which stores and formats are profitable
-3. **Drill into daily patterns**: Use `fact_daily_sales` to explore day-of-week effects, product mix, and loyalty transaction patterns
-4. **Join the tables**: Connect facts to dimensions on `store_id`, `date_id`, and `product_id` to add context to every metric
-5. **Note nulls**: `seating_capacity` is nullable for some Drive-Thru and Transport-Hub formats; all other key columns are fully populated
-6. **Synthesise insights**: Build your narrative around the four analysis areas, connecting findings to the business decisions they should inform
+> Screenshots: add images to `/docs/screenshots` and link them here.
+> `![Page 1 - Profit Leakage](docs/screenshots/page1.png)`
 
 ---
 
+## Table of contents
+
+1. [Project overview](#project-overview)
+2. [Business problem](#business-problem)
+3. [Key findings](#key-findings)
+4. [Report structure](#report-structure)
+5. [Data model](#data-model)
+6. [KPIs and DAX measures](#kpis-and-dax-measures)
+7. [Data quality findings](#data-quality-findings)
+8. [Design decisions](#design-decisions)
+9. [Tech stack](#tech-stack)
+10. [Repository structure](#repository-structure)
+11. [How to use](#how-to-use)
+12. [Limitations](#limitations)
+13. [Author](#author)
+
+---
+
+## Project overview
+
+The report answers one question: **where does revenue stop turning into profit?**
+
+It covers 60 stores across 12 UK regions over 24 months (January 2023 to December 2024). Each page tackles one problem, then ends with a dynamic text box that states the finding and a recommended action.
+
+| Page | Problem | Core question |
+|---|---|---|
+| 1. Profit Leakage | Revenue hides thin margins | Which stores earn their revenue, and where does each £1 go? |
+| 2. Peak Demand vs Staffing | Labour is not matched to demand | Is staffing, the biggest controllable cost, aligned with demand? |
+| 3. Structural Cost and Action Plan | Rent and staffing lock in losses | Which stores need action, and which cost should be fixed first? |
+
+The report is **strategic, not descriptive**. Every visual has a question as its title, a subtitle for drill-down guidance, an info overlay explaining how to read it, and a KPI card with a one-line reference insight.
+
+## Business problem
+
+The challenge brief described an urban food-delivery operation (delivery speed, traffic, weather, SLA breaches, food temperature). The dataset supplied is a **coffee-store chain** (stores, footfall, staffing, rent, loyalty). The delivery-specific fields do not exist in the data, so building them would have meant inventing data.
+
+I kept the brief's strategic structure and applied it to the schema provided:
+
+- High volume does not always mean healthy profit.
+- Peak-period capacity is hard to manage.
+- Structural cost (rent and staffing) creates pressure that volume cannot fix.
+- Cross-dimensional patterns (store, region, location, rent band) hide the riskiest stores.
+
+## Key findings
+
+All figures are network totals for the full 24 months, with no slicers applied.
+
+| Finding | Evidence |
+|---|---|
+| Revenue and margin are flat | £89.7M revenue and £16.9M net profit; margin 18.8% overall (18.84% in 2023, 18.80% in 2024). |
+| Fixed costs take 41p of every £1 | Staffing 31.0% and rent 10.4% of revenue, on top of COGS at 37.9% and loyalty at 1.9%. |
+| 1 in 6 store-months makes a loss | 15.6% of store-months are loss-making. |
+| Staffing is the main margin driver | Staffing % of revenue vs net margin has a correlation of about -0.96 at store-month level. |
+| Labour is not matched to demand | Revenue per staff hour is about £49 across every shift pattern, and staff hours are uncorrelated with revenue. |
+| Rent is a London problem | High rent band margin is 10.6% against 21.6% for Low; 143 of the 151 High-band store-months are in London, which has the weakest regional margin (8.5%). |
+| Loyalty is not the margin lever | Loyalty share of spend vs margin has a correlation of about -0.01, and redemption cost is about 1.9% of revenue at every store. |
+| A short list of stores needs action | 9 stores exceed the network on margin gap, staffing and rent at the same time. |
+
+## Report structure
+
+### Page 1: Profit Leakage
+*Where profit leaks: fixed costs take 41p of every £1.*
+
+<img width="854" height="481" alt="Screenshot 2026-10-21 003006" src="https://github.com/user-attachments/assets/f400a57b-1231-46ad-85ce-08197ea52b4c" />
+
+| Visual | Question it answers |
+|---|---|
+| Scatter (revenue vs net margin, coloured by store status) | Which stores earn their revenue, and which only generate volume? |
+| Waterfall (revenue to net profit) | Where does each £1 of revenue go before it becomes profit? |
+| Revenue by location type, drill to region and city | Where does revenue concentrate? |
+| Line and column (revenue and margin by month) | Is revenue growth actually improving margin? |
+
+KPIs: Revenue, Net Profit, Net Margin %, Fixed Cost % Rev, Loss-Making Stores, Loss Store Revenue Share.
+
+### Page 2: Peak Demand vs Staffing
+*Staffing is the biggest controllable cost, and it is not matched to demand.*
+
+<img width="854" height="480" alt="Screenshot 2026-10-21 003053" src="https://github.com/user-attachments/assets/0066666f-a193-45f9-94f6-4f1948d510b8" />
+
+| Visual | Question it answers |
+|---|---|
+| Matrix heatmap (day by shift, revenue per staff hour) | Does productivity change with the day or the shift? |
+| Donut (peak-to-dead ratio by store format) | Does peak-hour pressure differ by format? |
+| Scatter (staffing % vs margin, coloured by store status) | Does higher staffing cost erode margin? |
+| Ribbon (revenue per staff hour by month, legend store status) | Does any store status earn consistently more per staff hour? |
+
+KPIs: Revenue per Staff Hour, Staffing % Rev, Peak-to-Dead Ratio, Avg Dwell Time, Transactions per Staff Hour, Revenue per Footfall.
+
+### Page 3: Structural Cost and Action Plan
+*Structural losses sit in a few stores, and rent and staffing are the cause, not loyalty.*
+
+<img width="854" height="481" alt="Screenshot 2026-10-21 003259" src="https://github.com/user-attachments/assets/54092a3b-faa8-4477-a046-a1cced71fb1f" />
+
+| Visual | Question it answers |
+|---|---|
+| Clustered column (margin and rent % by rent band) | Does rent band drive losses? |
+| Scatter (loyalty share vs margin, coloured by store status) | Does loyalty adoption change margin? |
+| Net margin and rent % by location type, drill to region and city | Where do margin and rent pressure diverge? |
+| Table (risk score, primary cost driver, priority action) | Which stores need action, and which cost do we fix first? |
+
+KPIs: Loyalty Revenue %, Loyalty Cost % Rev, Rent % Rev, Gross Margin %, Stores Needing Action, Flagged Stores Margin Gap.
+
+## Data model
+
+Star schema with five tables. All relationships are one-to-many, single direction. `dim_date` is marked as the date table.
+
+| Table | Grain | Rows |
+|---|---|---|
+| `dim_store` | One row per store | 60 |
+| `dim_date` | One row per day (1 Jan 2023 to 30 Dec 2024) | 730 |
+| `dim_product` | One row per product | 40 |
+| `fact_store_monthly_profitability` | Store by month | 1,440 |
+| `fact_daily_sales` | Store by day by product (**a sample**, see limitations) | 10,000 |
+
+Relationships:
+
+- `dim_store[store_id]` to both fact tables
+- `dim_date[date_id]` to both fact tables
+- `dim_product[product_id]` to `fact_daily_sales`
+
+All revenue, cost, profit and margin measures use `fact_store_monthly_profitability`. `fact_daily_sales` is used only for staff hours, dwell time, footfall and day-type analysis.
+
+A disconnected table, `Waterfall Lines`, supplies the bars for the waterfall visual.
+
+## KPIs and DAX measures
+
+A sample of the core measures:
+
+```DAX
+Revenue       = SUM(fact_store_monthly_profitability[total_monthly_revenue_gbp])
+Net Profit    = SUM(fact_store_monthly_profitability[net_profit_gbp])
+Net Margin %  = DIVIDE([Net Profit], [Revenue])
+Fixed Cost % Rev = [Rent % Rev] + [Staffing % Rev]
+Gross Margin %   = DIVIDE([Revenue] - [COGS], [Revenue])
+
+Loss Months % =
+DIVIDE(
+    CALCULATE(COUNTROWS(fact_store_monthly_profitability),
+              fact_store_monthly_profitability[net_profit_gbp] < 0),
+    COUNTROWS(fact_store_monthly_profitability)
+)
+
+Store Risk Score =
+VAR a = IF([Net Margin %] < [Network Margin %], 1, 0)
+VAR b = IF([Staffing % Rev] > CALCULATE([Staffing % Rev], ALL(dim_store)), 1, 0)
+VAR c = IF([Rent % Rev]     > CALCULATE([Rent % Rev],     ALL(dim_store)), 1, 0)
+RETURN a + b + c
+
+Priority Action =
+SWITCH([Store Risk Score], 3, "Restructure", 2, "Monitor", "Maintain")
+```
+
+**Dynamic insight text.** Each page has a text box driven by a DAX measure, and each KPI card has a one-line reference measure. When no store filter is active, reference lines compare against the median store, because comparing a number with the whole network that contains it returns zero.
+
+```DAX
+Ref Rent % =
+VAR bench = IF([Store Filtered],
+                CALCULATE([Rent % Rev], ALL(dim_store)),
+                MEDIANX(ALL(dim_store[store_id]), [Rent % Rev]))
+VAR lbl = IF([Store Filtered], "network", "median store")
+VAR gap = [Rent % Rev] - bench
+RETURN FORMAT(ABS(gap) * 100, "0.0") & " pts " & IF(gap > 0, "above", "below") &
+       " " & lbl & " (" & FORMAT(bench, "0.0%") & ")"
+```
+
+The full measure library is in [`/dax/measures.md`](dax/measures.md).
+
+## Data quality findings
+
+I audited the workbook before building and changed the design wherever the data did not support the original plan.
+
+| Finding | Impact | Action taken |
+|---|---|---|
+| `fact_daily_sales` holds 10,000 rows covering about 20% of store-days (8,910 of 43,800), and its revenue totals £20.5M against £89.7M in the monthly table. | The two revenue totals cannot be compared directly. | All P&L measures use the monthly table; the daily table is labelled "sample basis". |
+| Store-month revenue in the two fact tables is uncorrelated (r about 0). | The tables cannot be reconciled below network level. | Daily table used for ratios and patterns only. |
+| Net profit equals revenue minus COGS, rent, staffing and loyalty cost exactly. | No unexplained cost. | The waterfall has no "other" bar. |
+| Product category shows identical margin (about 63%) and revenue stream mix. | A product matrix would show no differences. | Product analysis removed from Page 3. |
+| Store status is a current snapshot, but 3 non-active stores trade in all 24 months. | Status colour cannot be read as history. | Overlays state this explicitly. |
+| Loyalty redemption cost is about 1.9% of revenue at every store. | A loyalty flag in the risk score was noise. | Risk score uses margin gap, staffing and rent only. |
+| `store_format` has 58 High-Street and 2 Transport-Hub stores. | A format slicer is nearly useless. | `location_type` and `region` used for slicing. |
+| Dimension rent and staffing differ from monthly values by up to 16% and 28%. | Double counting risk. | Monthly fact used for all costs. |
+| 17 store-months have margins as low as -339%. | Outliers distort axes. | Axes capped; medians used where relevant. |
+
+Figures in this README were cross-checked in Python against the source workbook. DAX results should be confirmed in your own Power BI model.
+
+## Design decisions
+
+- **One problem per page,** with at most 4 visuals plus KPI cards, so each page can be read in seconds.
+- **Question-led titles.** Every visual title is the question it answers; subtitles guide drill-down.
+- **Info overlays.** Each visual has an "i" button (bookmark-driven) explaining what it shows, how to read it, its data basis and its caveats.
+- **Honest benchmarks.** Reference lines use a median-store benchmark when unfiltered.
+- **Sample basis labels** wherever the daily table is used.
+- **Restrained palette:** one neutral, one accent, and red reserved for losses.
+
+## Tech stack
+
+- Power BI Desktop (data model, DAX, bookmarks, drill-through)
+- DAX (measures, calculated columns, dynamic text)
+- Excel workbook as the source
+- Python (pandas) for data validation
+
+## Repository structure
+
+Suggested layout:
+
+```
+.
+├── README.md
+├── report/
+│   └── coffee-profitability.pbix
+├── data/
+│   └── data.xlsx
+├── dax/
+│   └── measures.md
+└── docs/
+    └── screenshots/
+```
+
+## How to use
+
+1. Download or clone the repository.
+2. Open `report/coffee-profitability.pbix` in Power BI Desktop.
+3. If prompted, point the data source to `data/data.xlsx` (Home > Transform data > Data source settings).
+4. Rename the monthly table to `fact_store_monthly_profitability`. Excel truncates the sheet name to `fact_store_monthly_profitabilit` (31-character limit).
+5. Use the page slicers (Year, Region, rent band, location type) and the drill arrows on the location visuals.
+6. Click the "i" buttons for guidance on each visual.
+
+## Limitations
+
+- **Daily sales is a sample** (about 20% of store-days). Treat staff-hour, dwell and day-type findings as patterns, not totals.
+- **Peak and dead-hour transaction counts are partial** for each month, so only their ratio is meaningful.
+- **Store status is a snapshot**, not a history.
+- **Two years of data** limit year-on-year comparison.
+- **The original brief described food delivery.** Delivery-specific analysis (traffic, weather, delivery time, food temperature) could not be built from the data supplied.
+- Findings are observational correlations, not proof of cause.
+
+## Author
+
+**Emmanuel Idowu** — Data Analyst & Power BI Developer
+📺 YouTube: [YOUTUBE](https://youtube.com/@Emmy-The-Analyst)
+🌐 Portfolio: [PORTFOLIO](https://emmy-portfolio.vercel.app)
+💼 Manifest Data Ltd — data literacy training & consultancy for African organizations
+
+Built for the Onyx Data challenge.
